@@ -1,0 +1,11 @@
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/bin/Debug/netcoreapp2.0/LeenartMalteProject.deps.json
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/bin/Debug/netcoreapp2.0/LeenartMalteProject.runtimeconfig.json
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/bin/Debug/netcoreapp2.0/LeenartMalteProject.runtimeconfig.dev.json
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/bin/Debug/netcoreapp2.0/LeenartMalteProject.dll
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/bin/Debug/netcoreapp2.0/LeenartMalteProject.pdb
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/obj/Debug/netcoreapp2.0/LeenartMalteProject.csprojResolveAssemblyReference.cache
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/obj/Debug/netcoreapp2.0/LeenartMalteProject.csproj.CoreCompileInputs.cache
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/obj/Debug/netcoreapp2.0/LeenartMalteProject.AssemblyInfoInputs.cache
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/obj/Debug/netcoreapp2.0/LeenartMalteProject.AssemblyInfo.cs
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/obj/Debug/netcoreapp2.0/LeenartMalteProject.dll
+/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/obj/Debug/netcoreapp2.0/LeenartMalteProject.pdb
