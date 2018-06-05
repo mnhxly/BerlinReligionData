@@ -12539,11 +12539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/LeenartMalteProject.csproj",
-      "projectName": "LeenartMalteProject",
-      "projectPath": "/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/LeenartMalteProject.csproj",
+      "projectUniqueName": "/Users/malte/Projects/BerlinReligionData/BerlinReligionData/BerlinReligionData.csproj",
+      "projectName": "BerlinReligionData",
+      "projectPath": "/Users/malte/Projects/BerlinReligionData/BerlinReligionData/BerlinReligionData.csproj",
       "packagesPath": "/Users/malte/.nuget/packages/",
-      "outputPath": "/Users/malte/Projects/LeenartMalteProject/LeenartMalteProject/obj",
+      "outputPath": "/Users/malte/Projects/BerlinReligionData/BerlinReligionData/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
