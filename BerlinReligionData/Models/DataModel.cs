@@ -11,8 +11,5 @@ namespace LeenartMalteProject.Models
         public int Subvention { get; set; }
 
 
-        public DataModel()
-        {
-        }
     }
 }

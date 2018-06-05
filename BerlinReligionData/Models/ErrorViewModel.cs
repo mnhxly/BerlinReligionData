@@ -1,6 +1,6 @@
 using System;
 
-namespace LeenartMalteProject.Models
+namespace BerlinReligionData.Models
 {
     public class ErrorViewModel
     {
