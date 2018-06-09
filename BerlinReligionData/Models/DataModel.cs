@@ -69,7 +69,7 @@ namespace LeenartMalteProject.Models
             public void CreateDB()
             {
 
-            using (var db = new ReligionContext())
+            using (ReligionContext db = new ReligionContext())
                 {
                 var subvention = new Subvention(1, 100, 2017, "Evangelisch, ");
 
