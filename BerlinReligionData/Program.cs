@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using LeenartMalteProject.Models;
 
 namespace BerlinReligionData
 {
@@ -14,7 +15,14 @@ namespace BerlinReligionData
     {
         public static void Main(string[] args)
         {
+
+            DataModel data = new DataModel();
+            data.CheckIfDBAlreadyExists();
+            data.CreateDB();
+
             BuildWebHost(args).Run();
+
+
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
