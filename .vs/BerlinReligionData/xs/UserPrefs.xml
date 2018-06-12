@@ -1,15 +1,13 @@
 ﻿<Properties StartupConfiguration="{8895C354-45B2-40A1-84B7-CB036C59B479}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BerlinReligionData/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BerlinReligionData/Models/DataModel.cs">
     <Files>
       <File FileName="BerlinReligionData/Models/DataModel.cs" Line="72" Column="1" />
-      <File FileName="BerlinReligionData/Program.cs" Line="30" Column="36" />
-      <File FileName="BerlinReligionData/BerlinReligionData.csproj" Line="1" Column="1" />
+      <File FileName="BerlinReligionData/Program.cs" Line="34" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/malte/Projects/BerlinReligionData/BerlinReligionData/Program.cs" relfile="BerlinReligionData/Program.cs" line="22" column="1" />
       <Breakpoint file="/Users/malte/Projects/BerlinReligionData/BerlinReligionData/Models/DataModel.cs" relfile="BerlinReligionData/Models/DataModel.cs" line="75" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

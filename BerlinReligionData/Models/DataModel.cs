@@ -7,7 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace LeenartMalteProject.Models
 {
@@ -47,6 +48,9 @@ namespace LeenartMalteProject.Models
     public class ReligionContext : DbContext
 
     {
+        //public ReligionContext(DbContextOptions<ReligionContext> options) : base(options)
+        //{}
+
         public DbSet<Subvention> Subventions { get; set; }
         //public DbSet<Year> Years { get; set; }
         //public DbSet<Subvention> Subventions { get; set; }
@@ -71,7 +75,7 @@ namespace LeenartMalteProject.Models
 
             using (ReligionContext db = new ReligionContext())
                 {
-                var subvention = new Subvention(1, 100, 2017, "Evangelisch, ");
+                var subvention = new Subvention(1, 100, 2017, "Evangelisch");
 
                 db.Subventions.Add(subvention);
                     db.SaveChanges();
