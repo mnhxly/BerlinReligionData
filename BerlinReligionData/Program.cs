@@ -16,9 +16,9 @@ namespace BerlinReligionData
         public static void Main(string[] args)
         {
 
-            DataModel data = new DataModel();
-            data.CheckIfDBAlreadyExists();
-            data.CreateDB();
+            //DataModel data = new DataModel();
+            //data.CheckIfDBAlreadyExists();
+            //data.CreateDB();
 
             BuildWebHost(args).Run();
 

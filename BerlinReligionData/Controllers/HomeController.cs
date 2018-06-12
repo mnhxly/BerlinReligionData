@@ -5,11 +5,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BerlinReligionData.Models;
+using BerlinReligionData.DAL;
 
 namespace BerlinReligionData.Controllers
 {
+
+   
+
+
     public class HomeController : Controller
     {
+
+        private readonly mysqlContext context;
+        public HomeController(mysqlContext context) {
+            this.context = context;
+        }
+
         public IActionResult Index()
         {
             return View();

@@ -28,6 +28,8 @@ namespace LeenartMalteProject.Models
             this.Year = year;
             this.Religion = religion;
         }
+
+
     }
     public class Participants
     {
@@ -48,15 +50,18 @@ namespace LeenartMalteProject.Models
     public class ReligionContext : DbContext
 
     {
-        //public ReligionContext(DbContextOptions<ReligionContext> options) : base(options)
-        //{}
+        //public ReligionContext(DbContextOptions<ReligionContext> options)
+        //    : base(options)
+        //{
+        //}
 
         public DbSet<Subvention> Subventions { get; set; }
-        //public DbSet<Year> Years { get; set; }
-        //public DbSet<Subvention> Subventions { get; set; }
-        //public DbSet<Participants> Participants { get; set; }
+        public DbSet<Participants> Participants { get; set; }
 
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;");
+        }
     }
     public class DataModel
     {

@@ -1,14 +1,20 @@
 ﻿<Properties StartupConfiguration="{8895C354-45B2-40A1-84B7-CB036C59B479}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BerlinReligionData/Models/DataModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BerlinReligionData/Controllers/HomeController.cs">
     <Files>
-      <File FileName="BerlinReligionData/Models/DataModel.cs" Line="72" Column="1" />
-      <File FileName="BerlinReligionData/Program.cs" Line="34" Column="1" />
+      <File FileName="BerlinReligionData/Models/DataModel.cs" Line="30" Column="10" />
+      <File FileName="BerlinReligionData/Program.cs" Line="24" Column="13" />
+      <File FileName="BerlinReligionData/Models/ApplicationData.cs" Line="6" Column="48" />
+      <File FileName="BerlinReligionData/DAL/mysqlContext.cs" Line="20" Column="66" />
+      <File FileName="BerlinReligionData/Startup.cs" Line="29" Column="135" />
+      <File FileName="BerlinReligionData/appsettings.json" Line="12" Column="1" />
+      <File FileName="BerlinReligionData/Models/Subvention.cs" Line="21" Column="1" />
+      <File FileName="BerlinReligionData/Controllers/HomeController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/malte/Projects/BerlinReligionData/BerlinReligionData/Models/DataModel.cs" relfile="BerlinReligionData/Models/DataModel.cs" line="75" column="1" />
+      <Breakpoint file="/Users/malte/Projects/BerlinReligionData/BerlinReligionData/Models/DataModel.cs" relfile="BerlinReligionData/Models/DataModel.cs" line="84" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
