@@ -25,7 +25,9 @@ namespace BerlinReligionData
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddDbContext<mysqlContext>(options => options.UseMySQL(Configuration.GetConnectionString("mysqlConnection")));
             services.AddDbContext<mysqlContext>(options => options.UseMySQL(Configuration.GetConnectionString("mysqlConnection")));
+
             services.AddIdentity<ApplicationData, IdentityRole>().AddEntityFrameworkStores<mysqlContext>().AddDefaultTokenProviders();
             services.AddMvc();
         }

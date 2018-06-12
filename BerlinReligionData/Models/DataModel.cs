@@ -67,7 +67,7 @@ namespace LeenartMalteProject.Models
     {
             public bool CheckIfDBAlreadyExists()
             {
-                string startupPath = System.IO.Directory.GetCurrentDirectory();
+                 
 
 
 
