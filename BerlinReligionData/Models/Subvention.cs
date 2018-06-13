@@ -1,8 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace BerlinReligionData.Models
 {
     public class Subvention
     {
+        [Key]
         public int Id { get; set; }
         public double SubventionAmount { get; set; }
         public int Year { get; set; }
