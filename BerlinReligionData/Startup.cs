@@ -26,9 +26,9 @@ namespace BerlinReligionData
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddDbContext<mysqlContext>(options => options.UseMySQL(Configuration.GetConnectionString("mysqlConnection")));
-            services.AddDbContext<mysqlContext>(options => options.UseMySQL(Configuration.GetConnectionString("mysqlConnection")));
+            //services.AddDbContext<mysqlContext>(options => options.UseMySQL(Configuration.GetConnectionString("mysqlConnection")));
 
-            services.AddIdentity<ApplicationData, IdentityRole>().AddEntityFrameworkStores<mysqlContext>().AddDefaultTokenProviders();
+            //services.AddIdentity<ApplicationData, IdentityRole>().AddEntityFrameworkStores<mysqlContext>().AddDefaultTokenProviders();
             services.AddMvc();
         }
 
@@ -45,7 +45,7 @@ namespace BerlinReligionData
             }
 
             app.UseStaticFiles();
-            app.UseIdentity();
+            //app.UseIdentity();
 
             app.UseMvc(routes =>
             {
