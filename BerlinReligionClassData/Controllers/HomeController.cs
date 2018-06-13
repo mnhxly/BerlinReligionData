@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD:BerlinReligionClassData/Controllers/HomeController.cs
 using BerlinReligionClassData.Models;
 using Newtonsoft.Json;
 using BerlinReligionClassData.DAL;
@@ -13,10 +14,27 @@ namespace BerlinReligionClassData.Controllers
     public class HomeController : Controller
     {
 
+=======
+using BerlinReligionData.Models;
+using BerlinReligionData.DAL;
+using Newtonsoft.Json;
+
+namespace BerlinReligionData.Controllers
+{
+
+    public class HomeController : Controller
+    {
+
+        //private readonly mysqlContext context;
+        ////public HomeController(mysqlContext context) {
+        ////    this.context = context;
+        ////}
+>>>>>>> master:BerlinReligionData/Controllers/HomeController.cs
 
         public ActionResult Index()
         {
             List<DataPoint> dataPoints = new List<DataPoint>();
+<<<<<<< HEAD:BerlinReligionClassData/Controllers/HomeController.cs
 
             using (var context = new ReligionDatabaseContext())
             {
@@ -29,6 +47,18 @@ namespace BerlinReligionClassData.Controllers
 
 
             ViewBag.DataPoints = JsonConvert.SerializeObject(dataPoints);
+=======
+            List<DataPoint> dataPoints1 = new List<DataPoint>();
+            
+            dataPoints.Add(new DataPoint(1496341800000, 2790));
+            dataPoints.Add(new DataPoint(1496428200000, 3380));
+
+            dataPoints1.Add(new DataPoint(1496341800000, 4000));
+            dataPoints1.Add(new DataPoint(1496428200000, 6000));
+
+            ViewBag.DataPoints = JsonConvert.SerializeObject(dataPoints);
+            ViewBag.DataPoints1 = JsonConvert.SerializeObject(dataPoints1);
+>>>>>>> master:BerlinReligionData/Controllers/HomeController.cs
 
             return View();
         }
