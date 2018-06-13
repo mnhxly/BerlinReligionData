@@ -12689,28 +12689,61 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD:BerlinReligionClassData/obj/project.assets.json
     "/Users/lennartbinscheck/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+=======
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+>>>>>>> 3bc3e9da2d28fb54ca2b54fe661cff17440a4bb1:BerlinReligionClassData/obj/project.assets.json
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
+<<<<<<< HEAD:BerlinReligionClassData/obj/project.assets.json
       "projectUniqueName": "/Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/BerlinReligionClassData.csproj",
       "projectName": "BerlinReligionClassData",
       "projectPath": "/Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/BerlinReligionClassData.csproj",
       "packagesPath": "/Users/lennartbinscheck/.nuget/packages/",
       "outputPath": "/Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/obj",
+=======
+<<<<<<< HEAD:BerlinReligionClassData/obj/project.assets.json
+      "projectUniqueName": "/Users/malte/Projects/BerlinReligionClassData/BerlinReligionClassData/BerlinReligionClassData.csproj",
+      "projectName": "BerlinReligionClassData",
+      "projectPath": "/Users/malte/Projects/BerlinReligionClassData/BerlinReligionClassData/BerlinReligionClassData.csproj",
+      "packagesPath": "/Users/malte/.nuget/packages/",
+      "outputPath": "/Users/malte/Projects/BerlinReligionClassData/BerlinReligionClassData/obj",
+=======
+      "projectUniqueName": "C:\\Users\\user\\Documents\\BerlinReligionData\\BerlinReligionData\\BerlinReligionData.csproj",
+      "projectName": "BerlinReligionData",
+      "projectPath": "C:\\Users\\user\\Documents\\BerlinReligionData\\BerlinReligionData\\BerlinReligionData.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Documents\\BerlinReligionData\\BerlinReligionData\\obj\\",
+>>>>>>> master:BerlinReligionData/obj/project.assets.json
+>>>>>>> 3bc3e9da2d28fb54ca2b54fe661cff17440a4bb1:BerlinReligionClassData/obj/project.assets.json
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD:BerlinReligionClassData/obj/project.assets.json
         "/Users/lennartbinscheck/.config/NuGet/NuGet.Config"
+=======
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+>>>>>>> 3bc3e9da2d28fb54ca2b54fe661cff17440a4bb1:BerlinReligionClassData/obj/project.assets.json
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12727,16 +12760,49 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
           },
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+<<<<<<< HEAD:BerlinReligionClassData/obj/project.assets.json
+=======
+          "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+<<<<<<< HEAD:BerlinReligionClassData/obj/project.assets.json
+            "version": "2.0.0",
+=======
+            "version": "[2.0.0, )",
+>>>>>>> 3bc3e9da2d28fb54ca2b54fe661cff17440a4bb1:BerlinReligionClassData/obj/project.assets.json
+            "autoReferenced": true
+          },
+          "MySql.Data.EntityFrameworkCore": {
+            "target": "Package",
+<<<<<<< HEAD
+            "version": "[8.0.11, )"
+=======
+            "version": "8.0.11"
+          },
+<<<<<<< HEAD:BerlinReligionClassData/obj/project.assets.json
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "2.1.0"
@@ -12744,6 +12810,13 @@
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
             "version": "2.1.0"
+=======
+>>>>>>> master:BerlinReligionData/obj/project.assets.json
+          "Microsoft.EntityFrameworkCore.Sqlite": {
+            "target": "Package",
+            "version": "2.1.0"
+>>>>>>> 514bce0bd46afa83db5bca538166379d8e0020fd
+>>>>>>> 3bc3e9da2d28fb54ca2b54fe661cff17440a4bb1:BerlinReligionClassData/obj/project.assets.json
           }
         },
         "imports": [

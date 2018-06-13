@@ -9,6 +9,7 @@
 /Users/malte/Projects/BerlinReligionClassData/BerlinReligionClassData/obj/Debug/netcoreapp2.0/BerlinReligionClassData.AssemblyInfo.cs
 /Users/malte/Projects/BerlinReligionClassData/BerlinReligionClassData/obj/Debug/netcoreapp2.0/BerlinReligionClassData.dll
 /Users/malte/Projects/BerlinReligionClassData/BerlinReligionClassData/obj/Debug/netcoreapp2.0/BerlinReligionClassData.pdb
+<<<<<<< HEAD
 /Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/bin/Debug/netcoreapp2.0/BerlinReligionClassData.deps.json
 /Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/bin/Debug/netcoreapp2.0/BerlinReligionClassData.runtimeconfig.json
 /Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/bin/Debug/netcoreapp2.0/BerlinReligionClassData.runtimeconfig.dev.json
@@ -20,3 +21,5 @@
 /Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/obj/Debug/netcoreapp2.0/BerlinReligionClassData.AssemblyInfo.cs
 /Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/obj/Debug/netcoreapp2.0/BerlinReligionClassData.dll
 /Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/obj/Debug/netcoreapp2.0/BerlinReligionClassData.pdb
+=======
+>>>>>>> 3bc3e9da2d28fb54ca2b54fe661cff17440a4bb1

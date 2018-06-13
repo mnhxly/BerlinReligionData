@@ -1,5 +1,17 @@
 {
   "version": 1,
+<<<<<<< HEAD
   "dgSpecHash": "PY4TQjS0x5GLvSufB4kR0J9ES2L/MJG/iwpRGejp6XJOkOMo749HALm9xDHSj79iO2TiHnPQ+aJ1dB2mLlCkUw==",
+=======
+<<<<<<< HEAD:BerlinReligionClassData/obj/BerlinReligionClassData.csproj.nuget.cache
+  "dgSpecHash": "T1TXCNfwPhDIAeORj++ZlPsgkb4nfL2AKbrc4zMZSZdEqibJtcp+skMYP6NYOWf8irCcV2q+FX+5+6l3NzQVMQ==",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "gZAXAI1bB7be1F+kXN37LiihwKs3xAebDkRjT71VYjDPTExf9DTBLrS572NIkUn4mAuX+g7W3b4iqMAhtl2TBQ==",
+=======
+  "dgSpecHash": "rn7FJS/p8F/RXAnZsk+MQBaCsye3yWMPshsi+evsg2zrqj+5GuXxDaLAhFZvlNosad7eU/CGFZEc3CFdlb9OzA==",
+>>>>>>> 514bce0bd46afa83db5bca538166379d8e0020fd
+>>>>>>> master:BerlinReligionData/obj/BerlinReligionData.csproj.nuget.cache
+>>>>>>> 3bc3e9da2d28fb54ca2b54fe661cff17440a4bb1
   "success": true
 }
