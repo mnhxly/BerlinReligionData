@@ -3,6 +3,8 @@ using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.IO.Packaging;
+using System.IO;
+using System.Linq;
 
 namespace BerlinReligionClassData.DAL
 {
