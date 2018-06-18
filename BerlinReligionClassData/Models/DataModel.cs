@@ -30,6 +30,20 @@ namespace BerlinReligionClassData.Models {
             return JsonConvert.SerializeObject (dataPoints);
         }
 
+        public string FilterParticipantsByYear(int year, string religion){
+            List<DataPoint> dataPoints = new List<DataPoint> ();
+
+            using (var context = new ReligionDatabaseContext ()) {
+                var participants = from v in context.Paricipants where v.Year == year && v.Religion == religion select v;
+
+                foreach (var participant in participants) {
+                    dataPoints.Add (new DataPoint (Convert.ToString (participant.Year), participant.ParticipantAmount));
+                }
+            }
+
+            return JsonConvert.SerializeObject (dataPoints);
+        }
+
         public string FilterDataByYear (int year = 2011) {
 
             List<DataPoint> dataPoints = new List<DataPoint> ();

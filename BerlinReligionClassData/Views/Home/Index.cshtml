@@ -6,7 +6,7 @@
         <span>
             <button id="participants" onclick=showParticipants()>Teilnehmer</button>
             <button id="subventions" onclick=showSubventions()>Subventionen</button>
-            <button id="partsub" onclick=filter('line')>Teilnehmer-Subventionen Vergleich</button>
+            <button id="partsub" onclick=showPartSub()>Teilnehmer-Subventionen Vergleich</button>
         </span>
     </div>
 
@@ -19,15 +19,15 @@
 
 <script>
     window.onload = showSubventions();
-    
+
     function showSubventions() {
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             theme: "light2",
             toolTip: {
-                enabled: true, 
-                animationEnabled: true 
+                enabled: true,
+                animationEnabled: true
             },
             title: {
                 text: "Subventions in 2011",
@@ -39,8 +39,8 @@
                 includeZero: false,
                 maximum: 1000000
             },
-            axisX:{
-                labelFontSize:9
+            axisX: {
+                labelFontSize: 9
             },
             data: [{
                 type: "column",
@@ -84,6 +84,40 @@
                 name: "Humanistischer Lebenskundeunterricht",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.ParticipantsHuman)
+            }]
+        });
+
+        chart.render();
+    }
+
+    function showPartSub() {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            toolTip: {
+                enabled: true,
+                animationEnabled: true
+            },
+            title: {
+                text: "Teilnehmer-Subventionen Vergleich",
+                margin: 25,
+                fontSize: 18
+            },
+            axisY: {
+                title: "Subventions",
+                includeZero: false,
+                maximum: 1000000
+            },
+            axisX: {
+                labelFontSize: 9
+            },
+            data: [{
+                type: "column",
+                dataPoints: @Html.Raw(ViewBag.Subventions2011)
+            }, {
+                type: "line",
+                dataPoints: @Html.Raw(ViewBag.ParticipantsEvan2011)
             }]
         });
 
