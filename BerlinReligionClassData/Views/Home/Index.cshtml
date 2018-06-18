@@ -54,8 +54,14 @@
             },
             data: [{
                 type: "line",
+                name: "Evang",
                 showInLegend: true,
-                dataPoints: @Html.Raw(ViewBag.Participants)
+                dataPoints: @Html.Raw(ViewBag.ParticipantsEvan)
+            }, {
+                type: "line",
+                name: "Kath",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.ParticipantsKath)
             }]
         });
 

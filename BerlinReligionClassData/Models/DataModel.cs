@@ -16,17 +16,17 @@ namespace BerlinReligionClassData.Models {
 
     public class DataModel {
 
-        public string FilterDataByParticipants () {
+        public string FilterParticipantsByReligion (string religion) {
             List<DataPoint> dataPoints = new List<DataPoint> ();
 
             using (var context = new ReligionDatabaseContext ()) {
-                var participants = from v in context.Paricipants select v;
+                var participants = from v in context.Paricipants where v.Religion == religion select v;
 
                 foreach (var participant in participants) {
                     dataPoints.Add (new DataPoint (Convert.ToString (participant.Year), participant.ParticipantAmount));
                 }
             }
-            
+
             return JsonConvert.SerializeObject (dataPoints);
         }
 
@@ -54,12 +54,12 @@ namespace BerlinReligionClassData.Models {
                 //Creates the database
                 context.Database.EnsureCreated ();
 
-                var sub1 = new Subvention (1, 26170923, 2011, "Evangelsiche Kische");
-                var sub2 = new Subvention (2, 25927285, 2012, "Evangelsiche Kische");
-                var sub3 = new Subvention (3, 25601313, 2013, "Evangelsiche Kische");
-                var sub4 = new Subvention (4, 25722940, 2014, "Evangelsiche Kische");
-                var sub5 = new Subvention (5, 25688712, 2015, "Evangelsiche Kische");
-                var sub6 = new Subvention (6, 28134983, 2016, "Evangelsiche Kische");
+                var sub1 = new Subvention (1, 26170923, 2011, "Evangelische Kirche");
+                var sub2 = new Subvention (2, 25927285, 2012, "Evangelische Kirche");
+                var sub3 = new Subvention (3, 25601313, 2013, "Evangelische Kirche");
+                var sub4 = new Subvention (4, 25722940, 2014, "Evangelische Kirche");
+                var sub5 = new Subvention (5, 25688712, 2015, "Evangelische Kirche");
+                var sub6 = new Subvention (6, 28134983, 2016, "Evangelische Kirche");
 
                 var sub7 = new Subvention (7, 13603080, 2011, "Humanistischer Verband");
                 var sub8 = new Subvention (8, 14160080, 2012, "Humanistischer Verband");
@@ -96,6 +96,33 @@ namespace BerlinReligionClassData.Models {
                 context.Paricipants.Add (par5);
                 context.Paricipants.Add (par6);
 
+                var par7 = new Participant (7, 25021, 2011, "Katholischer Religionsunterricht");
+                var par8 = new Participant (8, 24709, 2012, "Katholischer Religionsunterricht");
+                var par9 = new Participant (9, 24422, 2013, "Katholischer Religionsunterricht");
+                var par10 = new Participant (10, 24188, 2014, "Katholischer Religionsunterricht");
+                var par11 = new Participant (11, 24176, 2015, "Katholischer Religionsunterricht");
+                var par12 = new Participant (12, 24243, 2016, "Katholischer Religionsunterricht");
+
+                context.Paricipants.Add (par7);
+                context.Paricipants.Add (par8);
+                context.Paricipants.Add (par9);
+                context.Paricipants.Add (par10);
+                context.Paricipants.Add (par11);
+                context.Paricipants.Add (par12);
+
+                var par13 = new Participant (13, 49813, 2011, "Humanistischer Lebenskundeunterricht");
+                var par14 = new Participant (14, 51871, 2012, "Humanistischer Lebenskundeunterricht");
+                var par15 = new Participant (15, 53811, 2013, "Humanistischer Lebenskundeunterricht");
+                var par16 = new Participant (16, 55559, 2014, "Humanistischer Lebenskundeunterricht");
+                var par17 = new Participant (17, 56380, 2015, "Humanistischer Lebenskundeunterricht");
+                var par18 = new Participant (18, 60257, 2016, "Humanistischer Lebenskundeunterricht");
+
+                context.Paricipants.Add (par13);
+                context.Paricipants.Add (par14);
+                context.Paricipants.Add (par15);
+                context.Paricipants.Add (par16);
+                context.Paricipants.Add (par17);
+                context.Paricipants.Add (par18);
                 context.SaveChanges ();
             }
 
