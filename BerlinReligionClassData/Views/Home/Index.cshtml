@@ -1,70 +1,63 @@
-﻿@{
-    ViewData["Title"] = "Berlin Religion Data Tool";
-    var myFilterType = "column";
-}
+﻿@{ ViewData["Title"] = "Berlin Religion Data Tool"; var myFilterType = "column"; }
 
 <div id="content" class="">
-    
+
     <div class="CategoryBar" style="background-color: lightblue;">
         <span>
             <button id="participants" onclick=filter('line')>Teilnehmer</button>
-            <button id="subventions" onclick>Subventionen</button>
-            <button>Teilnehmer-Subventionen Vergleich</button>
+            <button id="subventions" onclick=filter('line')>Subventionen</button>
+            <button id="partsub" onclick=filter('line')>Teilnehmer-Subventionen Vergleich</button>
         </span>
     </div>
-    
+
     <div id="chartContainer" style=" height: 370px; width: 100%;"></div>
 
 
 </div>
 
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-    <script>
-        
+<script>
     window.onload = function() {
-            
-            var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                theme: "light2",
-                title: {
-                    text: "Irgendwas mit Religion"
-                },
-                axisY: {
-                    title: "Subventions"
-                },
-                data: [{
-                    type: "@myFilterType",
-                    dataPoints: @Html.Raw(ViewBag.DataPoints)
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            title: {
+                text: "Irgendwas mit Religion"
+            },
+            axisY: {
+                title: "Subventions"
+            },
+            data: [{
+                type: "@myFilterType",
+                dataPoints: @Html.Raw(ViewBag.DataPoints)
             }]
-    });
+        });
 
-    chart.render();
+        chart.render();
+    }
 
+    function filter(filterType) {
 
-
-}
-
-    function filter(filterType){
-        
         @myFilterType = filterType;
         console.log(@myFilterType);
 
         var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                theme: "light2",
-                title: {
-                    text: "Irgendwas mit Religion"
-                },
-                axisY: {
-                    title: "Subventions"
-                },
-                data: [{
-                    type: "@myFilterType",
-                    dataPoints: @Html.Raw(ViewBag.DataPoints)
+            animationEnabled: true,
+            theme: "light2",
+            title: {
+                text: "Irgendwas mit Religion"
+            },
+            axisY: {
+                title: "Subventions"
+            },
+            data: [{
+                type: "@myFilterType",
+                dataPoints: @Html.Raw(ViewBag.DataPoints)
             }]
-    });
+        });
 
-    chart.render();
+        chart.render();
     }
 </script>
