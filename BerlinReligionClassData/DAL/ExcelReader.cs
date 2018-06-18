@@ -13,7 +13,8 @@ namespace BerlinReligionClassData.DAL
         public bool ReadDataSource()
         {
 
-            string fileName = @"c:\path\to\my\file.xlsx";
+
+            string fileName = @"/DataSources/final_od-teilnehmerzahlen-religions-und-weltanschauungsunterricht-3.xls";
 
             using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
