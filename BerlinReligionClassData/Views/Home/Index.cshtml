@@ -22,28 +22,6 @@
 
     function showSubventions() {
 
-        switch (year) {
-            case 2011:
-                var subventions = ViewBag.Subventions2011;
-                break;
-            case 2012:
-                var subventions = ViewBag.Subventions2012;
-                break;
-            case 2013:
-                var subventions = ViewBag.Subventions2013;
-                break;
-            case 2014:
-                var subventions = ViewBag.Subventions2014;
-                break;
-            case 2015:
-                var subventions = ViewBag.Subventions2015;
-                break;
-            case 2016:
-                var subventions = ViewBag.Subventions2016;
-                break;
-
-        }
-
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             theme: "light2",
@@ -66,10 +44,10 @@
             },
             data: [{
                 type: "column",
-                dataPoints: @Html.Raw(subventions)
+                dataPoints: @Html.Raw(ViewBag.Subventions2011)
             }]
         });
-
+        
         chart.render();
     }
 
