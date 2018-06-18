@@ -13,7 +13,7 @@ namespace BerlinReligionClassData.DAL
         public DbSet<Participant> Paricipants { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            optionsBuilder.UseSqlite("Filename=./religionDb.sqlite");
+            optionsBuilder.UseSqlite("Filename=./religionDb.db");
         }
 
     }

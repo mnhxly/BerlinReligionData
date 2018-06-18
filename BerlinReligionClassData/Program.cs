@@ -19,6 +19,9 @@ namespace BerlinReligionClassData
         public static void Main(string[] args)
         {
 
+            ExcelReader excel = new ExcelReader();
+            excel.ReadDataSource();
+
             DataModel data = new DataModel();
             data.CreateDB();
 
