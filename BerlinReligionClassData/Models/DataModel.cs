@@ -75,26 +75,115 @@ namespace BerlinReligionClassData.Models {
                 var sub17 = new Subvention (17, 7489158, 2015, "Erzbistum");
                 var sub18 = new Subvention (18, 9024745, 2016, "Erzbistum");
 
+                var sub19 = new Subvention (19, 783792, 2011, "Islamische Föderation");
+                var sub20 = new Subvention (20, 912931, 2012, "Islamische Föderation");
+                var sub21 = new Subvention (21, 941873, 2013, "Islamische Föderation");
+                var sub22 = new Subvention (22, 889569, 2014, "Islamische Föderation");
+                var sub23 = new Subvention (23, 924576, 2015, "Islamische Föderation");
+                var sub24 = new Subvention (24, 1015184, 2016, "Islamische Föderation");
+
+                var sub25 = new Subvention (25, 611660, 2011, "Jüdische Gemeinde");
+                var sub26 = new Subvention (26, 612705, 2012, "Jüdische Gemeinde");
+                var sub27 = new Subvention (27, 460197, 2013, "Jüdische Gemeinde");
+                var sub28 = new Subvention (28, 548451, 2014, "Jüdische Gemeinde");
+                var sub29 = new Subvention (29, 630000, 2015, "Jüdische Gemeinde");
+                var sub30 = new Subvention (30, 674441, 2016, "Jüdische Gemeinde");
+
+                var sub31 = new Subvention (31, 24790, 2011, "Alevitische Gemeinde");
+                var sub32 = new Subvention (32, 25288, 2012, "Alevitische Gemeinde");
+                var sub33 = new Subvention (33, 23038, 2013, "Alevitische Gemeinde");
+                var sub34 = new Subvention (34, 21201, 2014, "Alevitische Gemeinde");
+                var sub35 = new Subvention (35, 26033, 2015, "Alevitische Gemeinde");
+                var sub36 = new Subvention (36, 32229, 2016, "Alevitische Gemeinde");
+
+                var sub37 = new Subvention (37, 20561, 2011, "Christengemeinschaft");
+                var sub38 = new Subvention (38, 19465, 2012, "Christengemeinschaft");
+                var sub39 = new Subvention (39, 20606, 2013, "Christengemeinschaft");
+                var sub40 = new Subvention (40, 23156, 2014, "Christengemeinschaft");
+                var sub41 = new Subvention (41, 25106, 2015, "Christengemeinschaft");
+                var sub42 = new Subvention (42, 30743, 2016, "Christengemeinschaft");
+
+                var sub43 = new Subvention (43, 4036, 2011, "Buddhistische Gesellschaft");
+                var sub44 = new Subvention (44, 1436, 2012, "Buddhistische Gesellschaft");
+                var sub45 = new Subvention (45, 2080, 2013, "Buddhistische Gesellschaft");
+                var sub46 = new Subvention (46, 1832, 2014, "Buddhistische Gesellschaft");
+                var sub47 = new Subvention (47, 1881, 2015, "Buddhistische Gesellschaft");
+                var sub48 = new Subvention (48, 2147, 2016, "Buddhistische Gesellschaft");
+
+                var sub49 = new Subvention (49, 0, 2011, "Lauder Beth Zion");
+                var sub50 = new Subvention (50, 7755, 2012, "Lauder Beth Zion");
+                var sub51 = new Subvention (51, 16876, 2013, "Lauder Beth Zion");
+                var sub52 = new Subvention (52, 19624, 2014, "Lauder Beth Zion");
+                var sub53 = new Subvention (53, 23000, 2015, "Lauder Beth Zion");
+                var sub54 = new Subvention (54, 28556, 2016, "Lauder Beth Zion");
+
+                var sub55 = new Subvention (55, 0, 2011, "Jüdische Traditionsschule");
+                var sub56 = new Subvention (56, 0, 2012, "Jüdische Traditionsschule");
+                var sub57 = new Subvention (57, 0, 2013, "Jüdische Traditionsschule");
+                var sub58 = new Subvention (58, 12627, 2014, "Jüdische Traditionsschule");
+                var sub59 = new Subvention (59, 33144, 2015, "Jüdische Traditionsschule");
+                var sub60 = new Subvention (60, 38074, 2016, "Jüdische Traditionsschule");
+
                 context.Subventions.Add (sub1);
                 context.Subventions.Add (sub2);
                 context.Subventions.Add (sub3);
                 context.Subventions.Add (sub4);
                 context.Subventions.Add (sub5);
                 context.Subventions.Add (sub6);
-
                 context.Subventions.Add (sub7);
                 context.Subventions.Add (sub8);
                 context.Subventions.Add (sub9);
                 context.Subventions.Add (sub10);
                 context.Subventions.Add (sub11);
                 context.Subventions.Add (sub12);
-
                 context.Subventions.Add (sub13);
                 context.Subventions.Add (sub14);
                 context.Subventions.Add (sub15);
                 context.Subventions.Add (sub16);
                 context.Subventions.Add (sub17);
                 context.Subventions.Add (sub18);
+                context.Subventions.Add (sub19);
+                context.Subventions.Add (sub20);
+                context.Subventions.Add (sub21);
+                context.Subventions.Add (sub22);
+                context.Subventions.Add (sub23);
+                context.Subventions.Add (sub24);
+                context.Subventions.Add (sub25);
+                context.Subventions.Add (sub26);
+                context.Subventions.Add (sub27);
+                context.Subventions.Add (sub28);
+                context.Subventions.Add (sub29);
+                context.Subventions.Add (sub30);
+                context.Subventions.Add (sub31);
+                context.Subventions.Add (sub32);
+                context.Subventions.Add (sub33);
+                context.Subventions.Add (sub34);
+                context.Subventions.Add (sub35);
+                context.Subventions.Add (sub36);
+                context.Subventions.Add (sub37);
+                context.Subventions.Add (sub38);
+                context.Subventions.Add (sub39);
+                context.Subventions.Add (sub40);
+                context.Subventions.Add (sub41);
+                context.Subventions.Add (sub42);
+                context.Subventions.Add (sub43);
+                context.Subventions.Add (sub44);
+                context.Subventions.Add (sub45);
+                context.Subventions.Add (sub46);
+                context.Subventions.Add (sub47);
+                context.Subventions.Add (sub48);
+                context.Subventions.Add (sub49);
+                context.Subventions.Add (sub50);
+                context.Subventions.Add (sub51);
+                context.Subventions.Add (sub52);
+                context.Subventions.Add (sub53);
+                context.Subventions.Add (sub54);
+                context.Subventions.Add (sub55);
+                context.Subventions.Add (sub56);
+                context.Subventions.Add (sub57);
+                context.Subventions.Add (sub58);
+                context.Subventions.Add (sub59);
+                context.Subventions.Add (sub60);
 
                 var par1 = new Participant (1, 80393, 2011, "Evangelischer Religionsunterricht");
                 var par2 = new Participant (2, 78800, 2012, "Evangelischer Religionsunterricht");

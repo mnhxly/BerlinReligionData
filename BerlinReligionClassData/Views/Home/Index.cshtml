@@ -4,8 +4,8 @@
 
     <div class="CategoryBar" style="background-color: lightblue;">
         <span>
-            <button id="participants" onclick=filter('Participants')>Teilnehmer</button>
-            <button id="subventions" onclick=filter('line')>Subventionen</button>
+            <button id="participants" onclick=showParticipants()>Teilnehmer</button>
+            <button id="subventions" onclick=showSubventions()>Subventionen</button>
             <button id="partsub" onclick=filter('line')>Teilnehmer-Subventionen Vergleich</button>
         </span>
     </div>
@@ -18,16 +18,29 @@
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 <script>
-    window.onload = function() {
+    window.onload = subventions();
+    
+    function showSubventions() {
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             theme: "light2",
+            toolTip: {
+                enabled: true, 
+                animationEnabled: true 
+            },
             title: {
-                text: "Irgendwas mit Religion"
+                text: "Subventions in 2011",
+                margin: 25,
+                fontSize: 18
             },
             axisY: {
-                title: "Subventions"
+                title: "Subventions",
+                includeZero: false,
+                maximum: 1000000
+            },
+            axisX:{
+                labelFontSize:9
             },
             data: [{
                 type: "column",
@@ -38,16 +51,20 @@
         chart.render();
     }
 
-    function filter(filterType) {
+    function showParticipants() {
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             theme: "light2",
             title: {
-                text: "Irgendwas mit Religion"
+                text: "Teilnehmer",
+                margin: 25,
+                fontSize: 18
             },
             axisY: {
-                title: "Participants"
+                title: "Participants",
+                margin: 25,
+                titleFontSize: 18
             },
             toolTip: {
                 shared: true
