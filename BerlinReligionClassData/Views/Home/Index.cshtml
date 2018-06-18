@@ -1,10 +1,10 @@
-﻿@{ ViewData["Title"] = "Berlin Religion Data Tool"; var myFilterType = "column"; }
+﻿@{ ViewData["Title"] = "Berlin Religion Data Tool"; var filterType = "DataPoints"; }
 
 <div id="content" class="">
 
     <div class="CategoryBar" style="background-color: lightblue;">
         <span>
-            <button id="participants" onclick=filter('line')>Teilnehmer</button>
+            <button id="participants" onclick=filter('Participants')>Teilnehmer</button>
             <button id="subventions" onclick=filter('line')>Subventionen</button>
             <button id="partsub" onclick=filter('line')>Teilnehmer-Subventionen Vergleich</button>
         </span>
@@ -30,7 +30,7 @@
                 title: "Subventions"
             },
             data: [{
-                type: "@myFilterType",
+                type: "column",
                 dataPoints: @Html.Raw(ViewBag.DataPoints)
             }]
         });
@@ -40,9 +40,6 @@
 
     function filter(filterType) {
 
-        @myFilterType = filterType;
-        console.log(@myFilterType);
-
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             theme: "light2",
@@ -50,11 +47,15 @@
                 text: "Irgendwas mit Religion"
             },
             axisY: {
-                title: "Subventions"
+                title: "Participants"
+            },
+            toolTip: {
+                shared: true
             },
             data: [{
-                type: "@myFilterType",
-                dataPoints: @Html.Raw(ViewBag.DataPoints)
+                type: "line",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Participants)
             }]
         });
 

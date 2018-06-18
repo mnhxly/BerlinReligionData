@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using BerlinReligionClassData.DAL;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
-using LeenartMalteProject.Models;
+using BerlinReligionClassData.Models;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
