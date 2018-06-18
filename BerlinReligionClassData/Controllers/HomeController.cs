@@ -11,7 +11,7 @@ namespace BerlinReligionClassData.Controllers {
 
         public ActionResult Index () {
             DataModel data = new DataModel ();
-            ViewBag.DataPoints = data.FilterDataByYear (year: 2016);
+            ViewBag.Subventions2011 = data.FilterDataByYear (year: 2011);
             ViewBag.ParticipantsEvan = data.FilterParticipantsByReligion ("Evangelischer Religionsunterricht");
             ViewBag.ParticipantsKath = data.FilterParticipantsByReligion ("Katholischer Religionsunterricht");
             return View ();

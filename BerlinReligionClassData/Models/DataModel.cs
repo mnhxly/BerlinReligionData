@@ -68,6 +68,13 @@ namespace BerlinReligionClassData.Models {
                 var sub11 = new Subvention (11, 15574620, 2015, "Humanistischer Verband");
                 var sub12 = new Subvention (12, 18082480, 2016, "Humanistischer Verband");
 
+                var sub13 = new Subvention (13, 7725543, 2011, "Erzbistum");
+                var sub14 = new Subvention (14, 7676283, 2012, "Erzbistum");
+                var sub15 = new Subvention (15, 7594242, 2013, "Erzbistum");
+                var sub16 = new Subvention (16, 7513192, 2014, "Erzbistum");
+                var sub17 = new Subvention (17, 7489158, 2015, "Erzbistum");
+                var sub18 = new Subvention (18, 9024745, 2016, "Erzbistum");
+
                 context.Subventions.Add (sub1);
                 context.Subventions.Add (sub2);
                 context.Subventions.Add (sub3);
@@ -81,6 +88,13 @@ namespace BerlinReligionClassData.Models {
                 context.Subventions.Add (sub10);
                 context.Subventions.Add (sub11);
                 context.Subventions.Add (sub12);
+
+                context.Subventions.Add (sub13);
+                context.Subventions.Add (sub14);
+                context.Subventions.Add (sub15);
+                context.Subventions.Add (sub16);
+                context.Subventions.Add (sub17);
+                context.Subventions.Add (sub18);
 
                 var par1 = new Participant (1, 80393, 2011, "Evangelischer Religionsunterricht");
                 var par2 = new Participant (2, 78800, 2012, "Evangelischer Religionsunterricht");
