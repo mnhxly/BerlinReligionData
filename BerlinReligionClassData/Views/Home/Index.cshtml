@@ -71,14 +71,19 @@
             },
             data: [{
                 type: "line",
-                name: "Evang",
+                name: "Evangelischer Religionsunterricht",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.ParticipantsEvan)
             }, {
                 type: "line",
-                name: "Kath",
+                name: "Katholischer Religionsunterricht",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.ParticipantsKath)
+            }, {
+                type: "line",
+                name: "Humanistischer Lebenskundeunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.ParticipantsHuman)
             }]
         });
 

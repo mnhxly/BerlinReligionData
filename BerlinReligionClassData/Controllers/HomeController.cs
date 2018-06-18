@@ -19,6 +19,7 @@ namespace BerlinReligionClassData.Controllers {
             ViewBag.Subventions2016 = data.FilterDataByYear (year: 2016);
             ViewBag.ParticipantsEvan = data.FilterParticipantsByReligion ("Evangelischer Religionsunterricht");
             ViewBag.ParticipantsKath = data.FilterParticipantsByReligion ("Katholischer Religionsunterricht");
+            ViewBag.ParticipantsHuman = data.FilterParticipantsByReligion("Humanistischer Lebenskundeunterricht");
             return View ();
         }
 
