@@ -115,12 +115,14 @@
             data: [{
                 type: "column",
                 dataPoints: @Html.Raw(ViewBag.Subventions2011)
-            }, {
-                type: "line",
-                name: "participants",
-                axisYIndex: 1,
-                dataPoints: @Html.Raw(ViewBag.ParticipantsEvan2011)
-            }]
+            }
+            //, {
+            //     type: "line",
+            //     name: "participants",
+            //     axisYIndex: 1,
+            //     dataPoints: @Html.Raw(ViewBag.ParticipantsEvan2011)
+            //}
+             ]
         });
 
         chart.render();
