@@ -22,7 +22,7 @@ namespace BerlinReligionClassData.Controllers {
             ViewBag.Subventions2014 = subFilter.DataByYear (year: 2014);
             ViewBag.Subventions2015 = subFilter.DataByYear (year: 2015);
             ViewBag.Subventions2016 = subFilter.DataByYear (year: 2016);
-            ViewBag.ParticipantsEvan2011 = partfilter.ParticipantsByYear (year: 2011, religion: Evangelisch);
+            ViewBag.Participants2011 = partfilter.ParticipantsByYear (year: 2011);
             ViewBag.ParticipantsEvan = partfilter.ParticipantsByReligion (Evangelisch);
             ViewBag.ParticipantsKath = partfilter.ParticipantsByReligion (Katholisch);
             ViewBag.ParticipantsHuman = partfilter.ParticipantsByReligion (Humanistisch);

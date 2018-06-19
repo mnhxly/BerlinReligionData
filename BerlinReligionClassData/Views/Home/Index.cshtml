@@ -30,23 +30,18 @@
              <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#" onclick=showSubventions(2011)>Name</a>
-            <a href="#" onclick=showSubventions(2012)>Name</a>
-            <a href="#" onclick=showSubventions(2013)>Name</a>
-            <a href="#" onclick=showSubventions(2014)>Name</a>
-            <a href="#" onclick=showSubventions(2015)>Name</a>
-            <a href="#" onclick=showSubventions(2016)>Name</a>
+            <a href="#" onclick=showParticipants()>2011 - 2016</a>
         </div>
         <button class="dropdown-btn">Teilnehmer nach Jahr
              <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#" onclick=showSubventions(2011)>Name</a>
-            <a href="#" onclick=showSubventions(2012)>Name</a>
-            <a href="#" onclick=showSubventions(2013)>Name</a>
-            <a href="#" onclick=showSubventions(2014)>Name</a>
-            <a href="#" onclick=showSubventions(2015)>Name</a>
-            <a href="#" onclick=showSubventions(2016)>Name</a>
+            <a href="#" onclick=showParticipantsByYear(2011)>Name</a>
+            <a href="#" onclick=showParticipantsByYear(2012)>Name</a>
+            <a href="#" onclick=showParticipantsByYear(2013)>Name</a>
+            <a href="#" onclick=showParticipantsByYear(2014)>Name</a>
+            <a href="#" onclick=showParticipantsByYear(2015)>Name</a>
+            <a href="#" onclick=showParticipantsByYear(2016)>Name</a>
         </div>
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Filtere die Daten</span>
@@ -154,6 +149,104 @@
         chart.render();
     }
 
+    function showParticipantsByYear(year) {
+        switch (year) {
+            case 2011:
+                var dataPoints = @Html.Raw(ViewBag.Participants2011);
+                break;
+            case 2012:
+                var dataPoints = @Html.Raw(ViewBag.Participants2012);
+                break;
+            case 2013:
+                var dataPoints = @Html.Raw(ViewBag.Participants2013);
+                break;
+            case 2014:
+                var dataPoints = @Html.Raw(ViewBag.Participants2014);
+                break;
+            case 2015:
+                var dataPoints = @Html.Raw(ViewBag.Participants2015);
+                break;
+            case 2016:
+                var dataPoints = @Html.Raw(ViewBag.Participants2016);
+                break;
+            default:
+                var dataPoints = @Html.Raw(ViewBag.Participants2011);
+                break;
+        }
+
+        var title = `Subventions in ${year}`;
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            toolTip: {
+                enabled: true,
+                animationEnabled: true
+            },
+            title: {
+                text: title,
+                margin: 25,
+                fontSize: 18
+            },
+            axisX: {
+                title: year
+            },
+            axisY: {
+                title: "Participants",
+                includeZero: false,
+                maximum: 1000000
+            },
+            axisX: {
+                labelFontSize: 9
+            },
+            data: [{
+                type: "column",
+                dataPoints: dataPoints
+            }]
+        });
+
+        chart.render();
+    }
+
+    function showParticipants() {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            title: {
+                text: "Teilnehmer",
+                margin: 25,
+                fontSize: 18
+            },
+            axisY: {
+                title: "Participants",
+                margin: 25,
+                titleFontSize: 18
+            },
+            toolTip: {
+                shared: true
+            },
+            data: [{
+                type: "line",
+                name: "Evangelischer Religionsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.ParticipantsEvan)
+            }, {
+                type: "line",
+                name: "Katholischer Religionsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.ParticipantsKath)
+            }, {
+                type: "line",
+                name: "Humanistischer Lebenskundeunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.ParticipantsHuman)
+            }]
+        });
+
+        chart.render();
+    }
+
     function showPartSub() {
 
         var chart = new CanvasJS.Chart("chartContainer", {
@@ -177,16 +270,9 @@
                 labelFontSize: 9
             },
             data: [{
-                    type: "column",
-                    dataPoints: @Html.Raw(ViewBag.Subventions2011)
-                }
-                //, {
-                //     type: "line",
-                //     name: "participants",
-                //     axisYIndex: 1,
-                //     dataPoints: @Html.Raw(ViewBag.ParticipantsEvan2011)
-                //}
-            ]
+                type: "column",
+                dataPoints: @Html.Raw(ViewBag.Subventions2011)
+            }]
         });
 
         chart.render();
