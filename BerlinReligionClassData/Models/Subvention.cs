@@ -10,15 +10,15 @@ namespace BerlinReligionClassData.Models
         public double SubventionAmount { get; set; }
         public int Year { get; set; }
         public string Religion { get; set; }
-        // public int ReligionKey { get; set; }
+        public int ReligionKey { get; set; }
 
-        public Subvention(int id, double subventionAmount, int year, string religion)
+        public Subvention(int id, double subventionAmount, int year, string religion, int religionKey)
         {
             this.Id = id;
             this.SubventionAmount = subventionAmount;
             this.Year = year;
             this.Religion = religion;
-            // this.ReligionKey = religionKey;
+            this.ReligionKey = religionKey;
         }
 
     }
