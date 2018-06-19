@@ -1,10 +1,13 @@
 ﻿using System;
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Spreadsheet;
 using System.IO.Packaging;
 using System.IO;
 using System.Linq;
+using ExcelDataReader;
+using System.Data;
+using NPOI.XSSF.UserModel;
+using NPOI.SS.Util;
+using NPOI.SS.UserModel;
+using NPOI.HSSF.UserModel;
 
 namespace BerlinReligionClassData.DAL
 {
@@ -13,61 +16,39 @@ namespace BerlinReligionClassData.DAL
         public bool ReadDataSource()
         {
 
-
-            string fileName = @"/DataSources/final_od-teilnehmerzahlen-religions-und-weltanschauungsunterricht-3.xls";
-
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            ISheet sheet;
+            Stream templateStream = new MemoryStream();
+            using (var file = new FileStream(@"DataSources/teilnehmerzahlen-religions-und-weltanschauungsunterricht.xls", FileMode.Open, FileAccess.Read))
             {
-                using (SpreadsheetDocument doc = SpreadsheetDocument.Open(fs, false))
+                HSSFWorkbook hssfwb = new HSSFWorkbook(file);
+                sheet = hssfwb.GetSheetAt(0); //get first sheet from workbook  
+
+                IRow headerRow = sheet.GetRow(0); //Get Header Row
+                int cellCount = headerRow.LastCellNum;
+
+                for (int j = 0; j < cellCount; j++)
                 {
-                    WorkbookPart workbookPart = doc.WorkbookPart;
-                    SharedStringTablePart sstpart = workbookPart.GetPartsOfType<SharedStringTablePart>().First();
-                    SharedStringTable sst = sstpart.SharedStringTable;
-
-                    WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
-                    Worksheet sheet = worksheetPart.Worksheet;
-
-                    var cells = sheet.Descendants<Cell>();
-                    var rows = sheet.Descendants<Row>();
-
-                    Console.WriteLine("Row count = {0}", rows.LongCount());
-                    Console.WriteLine("Cell count = {0}", cells.LongCount());
-
-                    // One way: go through each cell in the sheet
-                    foreach (Cell cell in cells)
-                    {
-                        if ((cell.DataType != null) && (cell.DataType == CellValues.SharedString))
-                        {
-                            int ssid = int.Parse(cell.CellValue.Text);
-                            string str = sst.ChildElements[ssid].InnerText;
-                            Console.WriteLine("Shared string {0}: {1}", ssid, str);
-                        }
-                        else if (cell.CellValue != null)
-                        {
-                            Console.WriteLine("Cell contents: {0}", cell.CellValue.Text);
-                        }
-                    }
-
-                    // Or... via each row
-                    foreach (Row row in rows)
-                    {
-                        foreach (Cell c in row.Elements<Cell>())
-                        {
-                            if ((c.DataType != null) && (c.DataType == CellValues.SharedString))
-                            {
-                                int ssid = int.Parse(c.CellValue.Text);
-                                string str = sst.ChildElements[ssid].InnerText;
-                                Console.WriteLine("Shared string {0}: {1}", ssid, str);
-                            }
-                            else if (c.CellValue != null)
-                            {
-                                Console.WriteLine("Cell contents: {0}", c.CellValue.Text);
-                            }
-                        }
-                    }
+                    NPOI.SS.UserModel.ICell cell = headerRow.GetCell(j);
+                    if (cell == null || string.IsNullOrWhiteSpace(cell.ToString())) continue;
                 }
+                for (int i = (sheet.FirstRowNum + 1); i <= sheet.LastRowNum; i++) //Read Excel File
+                {
+                    IRow row = sheet.GetRow(i);
+                    if (row == null) continue;
+                    if (row.Cells.All(d => d.CellType == CellType.Blank)) continue;
+                    for (int j = row.FirstCellNum; j < cellCount; j++)
+                    {
+                        //if (row.GetCell(j) != null)
+                        string st = row.GetCell(j).ToString();
+                            //sb.Append("<td>" + row.GetCell(j).ToString() + "</td>");
+                    }
+                    //sb.AppendLine("</tr>");
+                }
+
+
+
+                return true;
             }
-            return true;
         }
     }
 }

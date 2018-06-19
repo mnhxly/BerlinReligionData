@@ -5,8 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using BerlinReligionClassData.DAL;
 using BerlinReligionClassData.Models;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
