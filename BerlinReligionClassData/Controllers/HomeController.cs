@@ -14,7 +14,7 @@ namespace BerlinReligionClassData.Controllers {
         private const string Katholisch = "Katholischer Religionsunterricht";
         private const string Humanistisch = "Humanistischer Lebenskundeunterricht";
         public ActionResult Index () {
-            ParticipantFilter partfilter = new ParticipantFilter ();
+            ParticipantFilter partfilter = new ParticipantFilter();
             SubventionFilter subFilter = new SubventionFilter();
             ViewBag.Subventions2011 = subFilter.DataByYear (year: 2011);
             ViewBag.Subventions2012 = subFilter.DataByYear (year: 2012);

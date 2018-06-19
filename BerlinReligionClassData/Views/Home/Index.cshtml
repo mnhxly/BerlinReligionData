@@ -8,23 +8,23 @@
              <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#" onclick=showSubventions(2011)>Name</a>
-            <a href="#" onclick=showSubventions(2012)>Name</a>
-            <a href="#" onclick=showSubventions(2013)>Name</a>
-            <a href="#" onclick=showSubventions(2014)>Name</a>
-            <a href="#" onclick=showSubventions(2015)>Name</a>
-            <a href="#" onclick=showSubventions(2016)>Name</a>
+            <a href="#" onclick=showSubventionsByReligion(2011)>Name</a>
+            <a href="#" onclick=showSubventionsByReligion(2012)>Name</a>
+            <a href="#" onclick=showSubventionsByReligion(2013)>Name</a>
+            <a href="#" onclick=showSubventionsByReligion(2014)>Name</a>
+            <a href="#" onclick=showSubventionsByReligion(2015)>Name</a>
+            <a href="#" onclick=showSubventionsByReligion(2016)>Name</a>
         </div>
         <button class="dropdown-btn">Subventionen nach Jahr 
              <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#" onclick=showSubventions(2011)>Subventionen im Jahr 2011</a>
-            <a href="#" onclick=showSubventions(2012)>Subventionen im Jahr 2012</a>
-            <a href="#" onclick=showSubventions(2013)>Subventionen im Jahr 2013</a>
-            <a href="#" onclick=showSubventions(2014)>Subventionen im Jahr 2014</a>
-            <a href="#" onclick=showSubventions(2015)>Subventionen im Jahr 2015</a>
-            <a href="#" onclick=showSubventions(2016)>Subventionen im Jahr 2016</a>
+            <a href="#" onclick=showSubventionsByYear(2011)>Subventionen im Jahr 2011</a>
+            <a href="#" onclick=showSubventionsByYear(2012)>Subventionen im Jahr 2012</a>
+            <a href="#" onclick=showSubventionsByYear(2013)>Subventionen im Jahr 2013</a>
+            <a href="#" onclick=showSubventionsByYear(2014)>Subventionen im Jahr 2014</a>
+            <a href="#" onclick=showSubventionsByYear(2015)>Subventionen im Jahr 2015</a>
+            <a href="#" onclick=showSubventionsByYear(2016)>Subventionen im Jahr 2016</a>
         </div>
         <button class="dropdown-btn">Teilnehmer nach Religion
              <i class="fa fa-caret-down"></i>
@@ -52,9 +52,9 @@
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 <script>
-    window.onload = showSubventions(2011);
+    window.onload = showSubventionsByYear(2011);
 
-    function showSubventions(year) {
+    function showSubventionsByYear(year) {
         switch (year) {
             case 2011:
                 var dataPoints = @Html.Raw(ViewBag.Subventions2011);
@@ -78,6 +78,7 @@
                 var dataPoints = @Html.Raw(ViewBag.Subventions2011);
                 break;
         }
+
 
         var title = `Subventionen in ${year}`;
 
@@ -109,6 +110,65 @@
 
         chart.render();
     }
+
+
+    function showSubventionsByReligion(religionKey) {
+        switch (religionKey) {
+            case 1:
+                var dataPoints = @Html.Raw(ViewBag.Subventions2011);
+                break;
+            case 2:
+                var dataPoints = @Html.Raw(ViewBag.Subventions2012);
+                break;
+            case 3:
+                var dataPoints = @Html.Raw(ViewBag.Subventions2013);
+                break;
+            case 4:
+                var dataPoints = @Html.Raw(ViewBag.Subventions2014);
+                break;
+            case 5:
+                var dataPoints = @Html.Raw(ViewBag.Subventions2015);
+                break;
+            case 6:
+                var dataPoints = @Html.Raw(ViewBag.Subventions2016);
+                break;
+            default:
+                var dataPoints = @Html.Raw(ViewBag.Subventions2011);
+                break;
+        }
+
+
+        var title = `Subventionen in ${year}`;
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            toolTip: {
+                enabled: true,
+                animationEnabled: true
+            },
+            title: {
+                text: title,
+                margin: 25,
+                fontSize: 18
+            },
+            axisY: {
+                title: "Subventionen",
+                includeZero: false,
+                maximum: 1000000
+            },
+            axisX: {
+                labelFontSize: 9
+            },
+            data: [{
+                type: "column",
+                dataPoints: dataPoints
+            }]
+        });
+
+        chart.render();
+    }
+
 
     function showParticipants() {
 
