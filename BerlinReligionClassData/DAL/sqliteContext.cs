@@ -10,7 +10,7 @@ namespace BerlinReligionClassData.DAL
         /// Gets or sets the subventions.
         /// </summary>
         public DbSet<Subvention> Subventions { get; set; }
-        public DbSet<Participant> Paricipants { get; set; }
+        public DbSet<Participant> Participants { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             optionsBuilder.UseSqlite("Filename=./religionDb.db");

@@ -5,6 +5,8 @@ using BerlinReligionClassData.DAL;
 using BerlinReligionClassData.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using BerlinReligionClassData.Models.Helper.ParticipantFilter;
+using BerlinReligionClassData.Models.Helper.SubventionFilter;
 
 namespace BerlinReligionClassData.Controllers {
     public class HomeController : Controller {
@@ -12,17 +14,18 @@ namespace BerlinReligionClassData.Controllers {
         private const string Katholisch = "Katholischer Religionsunterricht";
         private const string Humanistisch = "Humanistischer Lebenskundeunterricht";
         public ActionResult Index () {
-            DataModel data = new DataModel ();
-            ViewBag.Subventions2011 = data.FilterDataByYear (year: 2011);
-            ViewBag.Subventions2012 = data.FilterDataByYear (year: 2012);
-            ViewBag.Subventions2013 = data.FilterDataByYear (year: 2013);
-            ViewBag.Subventions2014 = data.FilterDataByYear (year: 2014);
-            ViewBag.Subventions2015 = data.FilterDataByYear (year: 2015);
-            ViewBag.Subventions2016 = data.FilterDataByYear (year: 2016);
-            ViewBag.ParticipantsEvan2011 = data.FilterParticipantsByYear (year: 2011, religion: Evangelisch);
-            ViewBag.ParticipantsEvan = data.FilterParticipantsByReligion (Evangelisch);
-            ViewBag.ParticipantsKath = data.FilterParticipantsByReligion (Katholisch);
-            ViewBag.ParticipantsHuman = data.FilterParticipantsByReligion (Humanistisch);
+            ParticipantFilter partfilter = new ParticipantFilter ();
+            SubventionFilter subFilter = new SubventionFilter();
+            ViewBag.Subventions2011 = subFilter.DataByYear (year: 2011);
+            ViewBag.Subventions2012 = subFilter.DataByYear (year: 2012);
+            ViewBag.Subventions2013 = subFilter.DataByYear (year: 2013);
+            ViewBag.Subventions2014 = subFilter.DataByYear (year: 2014);
+            ViewBag.Subventions2015 = subFilter.DataByYear (year: 2015);
+            ViewBag.Subventions2016 = subFilter.DataByYear (year: 2016);
+            ViewBag.ParticipantsEvan2011 = partfilter.ParticipantsByYear (year: 2011, religion: Evangelisch);
+            ViewBag.ParticipantsEvan = partfilter.ParticipantsByReligion (Evangelisch);
+            ViewBag.ParticipantsKath = partfilter.ParticipantsByReligion (Katholisch);
+            ViewBag.ParticipantsHuman = partfilter.ParticipantsByReligion (Humanistisch);
             return View ();
         }
 
