@@ -28,7 +28,7 @@ namespace BerlinReligionClassData.Models.Helper.ParticipantFilter {
                 var participants = from v in context.Participants where v.Year == year select v;
 
                 foreach (var participant in participants) {
-                    dataPoints.Add (new DataPoint (Convert.ToString (participant.Year), participant.ParticipantAmount));
+                    dataPoints.Add (new DataPoint (Convert.ToString (participant.Religion), participant.ParticipantAmount));
                 }
             }
 

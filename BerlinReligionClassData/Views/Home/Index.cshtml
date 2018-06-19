@@ -1,6 +1,6 @@
 ﻿@{ ViewData["Title"] = "Berlin Religion Data Tool"; var filterType = "DataPoints"; }
 
-<div id="content" class="">
+<div id="content" class="chartView">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#" onclick=showPartSub()>Teilnehmer-Subventionen Vergleich</a>
@@ -36,12 +36,12 @@
              <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#" onclick=showParticipantsByYear(2011)>Name</a>
-            <a href="#" onclick=showParticipantsByYear(2012)>Name</a>
-            <a href="#" onclick=showParticipantsByYear(2013)>Name</a>
-            <a href="#" onclick=showParticipantsByYear(2014)>Name</a>
-            <a href="#" onclick=showParticipantsByYear(2015)>Name</a>
-            <a href="#" onclick=showParticipantsByYear(2016)>Name</a>
+            <a href="#" onclick=showParticipantsByYear(2011)>Teilnehmer im Jahr 2011</a>
+            <a href="#" onclick=showParticipantsByYear(2012)>Teilnehmer im Jahr 2012</a>
+            <a href="#" onclick=showParticipantsByYear(2013)>Teilnehmer im Jahr 2013</a>
+            <a href="#" onclick=showParticipantsByYear(2014)>Teilnehmer im Jahr 2014</a>
+            <a href="#" onclick=showParticipantsByYear(2015)>Teilnehmer im Jahr 2015</a>
+            <a href="#" onclick=showParticipantsByYear(2016)>Teilnehmer im Jahr 2016</a>
         </div>
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Filtere die Daten</span>
@@ -79,7 +79,7 @@
                 break;
         }
 
-        var title = `Subventions in ${year}`;
+        var title = `Subventionen in ${year}`;
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
@@ -94,7 +94,7 @@
                 fontSize: 18
             },
             axisY: {
-                title: "Subventions",
+                title: "Subventionen",
                 includeZero: false,
                 maximum: 1000000
             },
@@ -121,7 +121,7 @@
                 fontSize: 18
             },
             axisY: {
-                title: "Participants",
+                title: "Teilnehmer",
                 margin: 25,
                 titleFontSize: 18
             },
@@ -174,7 +174,7 @@
                 break;
         }
 
-        var title = `Participants in ${year}`;
+        var title = `Teilnehmer in ${year}`;
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
@@ -189,12 +189,12 @@
                 fontSize: 18
             },
             axisY: {
-                title: "Participants",
-                includeZero: false,
-                maximum: 1000000
+                title: "Teilnehmer",
+                includeZero: false
             },
             axisX: {
-                labelFontSize: 9
+                labelAutoFit: true,
+                labelFontSize: 12
             },
             data: [{
                 type: "column",
@@ -216,7 +216,7 @@
                 fontSize: 18
             },
             axisY: {
-                title: "Participants",
+                title: "Teilnehmer",
                 margin: 25,
                 titleFontSize: 18
             },
@@ -259,7 +259,7 @@
                 fontSize: 18
             },
             axisY: {
-                title: "Subventions",
+                title: "Subventionen",
                 includeZero: false,
                 maximum: 1000000
             },
