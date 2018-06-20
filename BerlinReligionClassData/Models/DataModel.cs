@@ -12,17 +12,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace BerlinReligionClassData.Models
-{
+namespace BerlinReligionClassData.Models {
 
-    public class DataModel
-    {
-        public void CreateDB()
-        {
+    public class DataModel {
+        public void CreateDB () {
 
-            ExcelReader excel = new ExcelReader();
-            excel.ReadDataSource();
-#if false
+            ExcelReader excel = new ExcelReader ();
+            excel.ReadDataSource ();
 
             using (var context = new ReligionDatabaseContext ()) {
                 //Clears and delete the database
@@ -234,7 +230,6 @@ namespace BerlinReligionClassData.Models
 
                 context.SaveChanges ();
             }
-#endif
 
         }
     }
