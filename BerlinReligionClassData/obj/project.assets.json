@@ -12838,13 +12838,13 @@
       "projectName": "BerlinReligionClassData",
       "projectPath": "/Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/BerlinReligionClassData.csproj",
       "packagesPath": "/Users/lennartbinscheck/.nuget/packages/",
-      "outputPath": "/Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/obj/",
+      "outputPath": "/Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/lennartbinscheck/.nuget/NuGet/NuGet.Config"
+        "/Users/lennartbinscheck/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -12867,6 +12867,7 @@
       "netcoreapp2.0": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "2.0.0",
             "autoReferenced": true

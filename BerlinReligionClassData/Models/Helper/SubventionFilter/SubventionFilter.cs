@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 
 namespace BerlinReligionClassData.Models.Helper.SubventionFilter {
     public class SubventionFilter {
+        
         public string DataByYear (int year = 2011) {
 
             List<DataPoint> dataPoints = new List<DataPoint> ();
@@ -21,5 +22,7 @@ namespace BerlinReligionClassData.Models.Helper.SubventionFilter {
 
             return JsonConvert.SerializeObject (dataPoints);
         }
+
+
     }
 }

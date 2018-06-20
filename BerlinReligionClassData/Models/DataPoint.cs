@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace BerlinReligionClassData.Models {
     //DataContract for Serializing Data - required to serve in JSON format
-    [DataPoint]
+    [DataContract]
     public class DataPoint {
         public DataPoint (string label, double y) {
             this.Label = label;
