@@ -203,6 +203,16 @@
                 name: "Humanistischer Lebenskundeunterricht",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.ParticipantsHuman)
+            }, {
+                type: "line",
+                name: "Islamischer Religionsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.ParticipantsHuman)
+            }, {
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.ParticipantsHuman)
             }]
         });
 

@@ -3,19 +3,24 @@ using System.Diagnostics;
 using System.Linq;
 using BerlinReligionClassData.DAL;
 using BerlinReligionClassData.Models;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using BerlinReligionClassData.Models.Helper.ParticipantFilter;
 using BerlinReligionClassData.Models.Helper.SubventionFilter;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace BerlinReligionClassData.Controllers {
     public class HomeController : Controller {
         private const string Evangelisch = "Evangelischer Religionsunterricht";
         private const string Katholisch = "Katholischer Religionsunterricht";
+        private const string Islamisch = "Islamischer Religionsunterricht";
+
         private const string Humanistisch = "Humanistischer Lebenskundeunterricht";
+
+        private const string Sonstig = "Sonstiger Religions- und Weltanschauungsunterricht";
+
         public ActionResult Index () {
-            ParticipantFilter partfilter = new ParticipantFilter();
-            SubventionFilter subFilter = new SubventionFilter();
+            ParticipantFilter partfilter = new ParticipantFilter ();
+            SubventionFilter subFilter = new SubventionFilter ();
             ViewBag.Subventions2011 = subFilter.DataByYear (year: 2011);
             ViewBag.Subventions2012 = subFilter.DataByYear (year: 2012);
             ViewBag.Subventions2013 = subFilter.DataByYear (year: 2013);
@@ -31,6 +36,8 @@ namespace BerlinReligionClassData.Controllers {
             ViewBag.ParticipantsEvan = partfilter.ParticipantsByReligion (Evangelisch);
             ViewBag.ParticipantsKath = partfilter.ParticipantsByReligion (Katholisch);
             ViewBag.ParticipantsHuman = partfilter.ParticipantsByReligion (Humanistisch);
+            ViewBag.ParticipantsIslam = partfilter.ParticipantsByReligion (Islamisch);
+            ViewBag.ParticipantsSonst = partfilter.ParticipantsByReligion (Sonstig);
             return View ();
         }
 
