@@ -1,23 +1,18 @@
 ﻿<Properties StartupConfiguration="{1C82382F-1C88-4805-A039-97425F3C0A20}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BerlinReligionClassData/Views/Home/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BerlinReligionClassData/DAL/ExcelReader.cs">
     <Files>
-      <File FileName="BerlinReligionClassData/DAL/ExcelReader.cs" Line="43" Column="35" />
+      <File FileName="BerlinReligionClassData/DAL/ExcelReader.cs" Line="77" Column="1" />
       <File FileName="BerlinReligionClassData/Program.cs" Line="7" Column="38" />
-      <File FileName="BerlinReligionClassData/Models/DataModel.cs" Line="22" Column="1" />
-      <File FileName="BerlinReligionClassData/Controllers/HomeController.cs" Line="1" Column="1" />
-      <File FileName="BerlinReligionClassData/Models/Helper/ParticipantFilter/ParticipantFilter.cs" Line="38" Column="2" />
+      <File FileName="BerlinReligionClassData/Models/DataModel.cs" Line="40" Column="10" />
+      <File FileName="BerlinReligionClassData/Models/Participants.cs" Line="1" Column="1" />
       <File FileName="BerlinReligionClassData/Models/Subvention.cs" Line="1" Column="1" />
-      <File FileName="BerlinReligionClassData/Models/Helper/SubventionFilter/SubventionFilter.cs" Line="26" Column="1" />
-      <File FileName="BerlinReligionClassData/Views/Home/Index.cshtml" Line="141" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../BerlinReligionClassData/DAL/ExcelReader.cs" line="70" offsetX="509" offsetY="1035" expression="row.RowRecord" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.BerlinReligionClassData PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
 </Properties>

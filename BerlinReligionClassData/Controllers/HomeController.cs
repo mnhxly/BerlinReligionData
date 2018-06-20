@@ -43,8 +43,7 @@ namespace BerlinReligionClassData.Controllers {
 
         public IActionResult About () {
             ViewData["Message"] = "Your application description page.";
-            ExcelReader excel = new ExcelReader ();
-            excel.ReadDataSource ();
+           
             return View ();
         }
 
