@@ -24,7 +24,7 @@ namespace BerlinReligionClassData.DAL
 
             ISheet sheet;
             Stream templateStream = new MemoryStream();
-            using (var file = new FileStream(@"DataSources/zuschuesse-religions-und-weltanschauungsunterricht.xls", FileMode.Open, FileAccess.Read))
+            using (var file = new FileStream(@"DataSources/teilnehmerzahlen-religions-und-weltanschauungsunterricht.xls", FileMode.Open, FileAccess.Read))
             {
                 HSSFWorkbook hssfwb = new HSSFWorkbook(file);
                 sheet = hssfwb.GetSheetAt(0); //get first sheet from workbook  
@@ -33,7 +33,7 @@ namespace BerlinReligionClassData.DAL
                 int cellCount = headerRow.LastCellNum;
 
 
-                for (int i = (2); i <= sheet.LastRowNum; i++) //Read Excel File
+                for (int i = (4); i <= sheet.LastRowNum; i++) //Read Excel File
                 {
                     IRow row = sheet.GetRow(i);
                     if (row == null) continue;
@@ -65,9 +65,9 @@ namespace BerlinReligionClassData.DAL
 
                                 break;
                         }
-                            Participant s = new Participant(id, Convert.ToDouble(row.Cells[l].ToString()), year, row.Cells[1].ToString(), Convert.ToInt32(row.Cells[0].ToString()));
+                            Participant p = new Participant(id, Convert.ToDouble(row.Cells[l].ToString()), year, row.Cells[1].ToString(), Convert.ToInt32(row.Cells[0].ToString()));
                         id++;
-                        parList.Add(s);
+                        parList.Add(p);
                     }
 
                 }
@@ -85,7 +85,7 @@ namespace BerlinReligionClassData.DAL
 
                 ISheet sheet;
                 Stream templateStream = new MemoryStream();
-                using (var file = new FileStream(@"DataSources/teilnehmerzahlen-religions-und-weltanschauungsunterricht.xls", FileMode.Open, FileAccess.Read))
+                using (var file = new FileStream(@"DataSources/zuschuesse-religions-und-weltanschauungsunterricht.xls", FileMode.Open, FileAccess.Read))
                 {
                     HSSFWorkbook hssfwb = new HSSFWorkbook(file);
                     sheet = hssfwb.GetSheetAt(0); //get first sheet from workbook  
@@ -94,7 +94,7 @@ namespace BerlinReligionClassData.DAL
                     int cellCount = headerRow.LastCellNum;
 
 
-                    for (int i = (4); i <= sheet.LastRowNum; i++) //Read Excel File
+                    for (int i = (2); i <= sheet.LastRowNum; i++) //Read Excel File
                     {
                         IRow row = sheet.GetRow(i);
                         if (row == null) continue;
