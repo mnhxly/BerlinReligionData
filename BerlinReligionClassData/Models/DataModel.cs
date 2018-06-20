@@ -16,7 +16,7 @@ namespace BerlinReligionClassData.Models {
 
     public class DataModel {
         public void CreateDB () {
-
+            List<Subvention> subventions = new List<Subvention>();
             ExcelReader excel = new ExcelReader ();
             excel.ReadDataSource ();
 
