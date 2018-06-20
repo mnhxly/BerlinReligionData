@@ -12828,23 +12828,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/lennartbinscheck/.nuget/packages/": {},
+    "/Users/malte/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/BerlinReligionClassData.csproj",
+      "projectUniqueName": "/Users/malte/Projects/BerlinReligionData/BerlinReligionClassData/BerlinReligionClassData.csproj",
       "projectName": "BerlinReligionClassData",
-      "projectPath": "/Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/BerlinReligionClassData.csproj",
-      "packagesPath": "/Users/lennartbinscheck/.nuget/packages/",
-      "outputPath": "/Users/lennartbinscheck/development/school/BerlinReligionData/BerlinReligionClassData/obj/",
+      "projectPath": "/Users/malte/Projects/BerlinReligionData/BerlinReligionClassData/BerlinReligionClassData.csproj",
+      "packagesPath": "/Users/malte/.nuget/packages/",
+      "outputPath": "/Users/malte/Projects/BerlinReligionData/BerlinReligionClassData/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/lennartbinscheck/.nuget/NuGet/NuGet.Config"
+        "/Users/malte/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -12867,8 +12867,9 @@
       "netcoreapp2.0": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0",
+            "version": "2.0",
             "autoReferenced": true
           },
           "Microsoft.AspNetCore.All": {
