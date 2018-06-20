@@ -13,9 +13,7 @@ namespace BerlinReligionClassData.Controllers {
         private const string Evangelisch = "Evangelischer Religionsunterricht";
         private const string Katholisch = "Katholischer Religionsunterricht";
         private const string Islamisch = "Islamischer Religionsunterricht";
-
         private const string Humanistisch = "Humanistischer Lebenskundeunterricht";
-
         private const string Sonstig = "Sonstiger Religions- und Weltanschauungsunterricht";
 
         public ActionResult Index () {
@@ -27,12 +25,25 @@ namespace BerlinReligionClassData.Controllers {
             ViewBag.Subventions2014 = subFilter.DataByYear (year: 2014);
             ViewBag.Subventions2015 = subFilter.DataByYear (year: 2015);
             ViewBag.Subventions2016 = subFilter.DataByYear (year: 2016);
+
+            ViewBag.SubventionsEvan = subFilter.SubventionsByReligion ("Evangelische Kirche");
+            ViewBag.SubventionsHuman = subFilter.SubventionsByReligion ("Humanistischer Verband");
+            ViewBag.SubventionsErz = subFilter.SubventionsByReligion ("Erzbistum");
+            ViewBag.SubventionsIslam = subFilter.SubventionsByReligion ("Islamische Föderation");
+            ViewBag.SubventionsJued = subFilter.SubventionsByReligion ("Jüdische Gemeinde");
+            ViewBag.SubventionsAlev = subFilter.SubventionsByReligion ("Alevitische Gemeinde");
+            ViewBag.SubventionsChris = subFilter.SubventionsByReligion ("Christengemeinschaft");
+            ViewBag.SubventionsBudd = subFilter.SubventionsByReligion ("Buddhistische Gesellschaft");
+            ViewBag.SubventionsLaud = subFilter.SubventionsByReligion ("Lauder Beth Zion");
+            ViewBag.SubventionsJuedTra = subFilter.SubventionsByReligion ("Jüdische Traditionsschule");
+
             ViewBag.Participants2011 = partfilter.ParticipantsByYear (year: 2011);
             ViewBag.Participants2012 = partfilter.ParticipantsByYear (year: 2012);
             ViewBag.Participants2013 = partfilter.ParticipantsByYear (year: 2013);
             ViewBag.Participants2014 = partfilter.ParticipantsByYear (year: 2014);
             ViewBag.Participants2015 = partfilter.ParticipantsByYear (year: 2015);
             ViewBag.Participants2016 = partfilter.ParticipantsByYear (year: 2016);
+
             ViewBag.ParticipantsEvan = partfilter.ParticipantsByReligion (Evangelisch);
             ViewBag.ParticipantsKath = partfilter.ParticipantsByReligion (Katholisch);
             ViewBag.ParticipantsHuman = partfilter.ParticipantsByReligion (Humanistisch);

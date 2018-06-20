@@ -23,6 +23,20 @@ namespace BerlinReligionClassData.Models.Helper.SubventionFilter {
             return JsonConvert.SerializeObject (dataPoints);
         }
 
+        public string SubventionsByReligion (string religion) {
+            List<DataPoint> dataPoints = new List<DataPoint> ();
+
+            using (var context = new ReligionDatabaseContext ()) {
+                var subventions = from v in context.Subventions where v.Religion == religion select v;
+
+                foreach (var subvention in subventions) {
+                    dataPoints.Add (new DataPoint (Convert.ToString (subvention.Year), subvention.SubventionAmount));
+                }
+            }
+
+            return JsonConvert.SerializeObject (dataPoints);
+        }
+
 
     }
 }

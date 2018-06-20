@@ -8,12 +8,16 @@
              <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#" onclick=showSubventionsByReligion(2011)>Name</a>
-            <a href="#" onclick=showSubventionsByReligion(2012)>Name</a>
-            <a href="#" onclick=showSubventionsByReligion(2013)>Name</a>
-            <a href="#" onclick=showSubventionsByReligion(2014)>Name</a>
-            <a href="#" onclick=showSubventionsByReligion(2015)>Name</a>
-            <a href="#" onclick=showSubventionsByReligion(2016)>Name</a>
+            <a href="#" onclick=showSubventionsByReligion(1)>Evangelische Kirche</a>
+            <a href="#" onclick=showSubventionsByReligion(2)>Humanistischer Verband</a>
+            <a href="#" onclick=showSubventionsByReligion(3)>Erzbistum</a>
+            <a href="#" onclick=showSubventionsByReligion(4)>Islamische Föderation</a>
+            <a href="#" onclick=showSubventionsByReligion(5)>Jüdische Gemeinde</a>
+            <a href="#" onclick=showSubventionsByReligion(6)>Alevitische Gemeinde</a>
+            <a href="#" onclick=showSubventionsByReligion(7)>Christengemeinschaft</a>
+            <a href="#" onclick=showSubventionsByReligion(8)>Buddhistische Gesellschaft</a>
+            <a href="#" onclick=showSubventionsByReligion(9)>Lauder Beth Zion</a>
+            <a href="#" onclick=showSubventionsByReligion(10)>Jüdische Traditionsschule</a>
         </div>
         <button class="dropdown-btn">Subventionen nach Jahr 
              <i class="fa fa-caret-down"></i>
@@ -96,8 +100,7 @@
             },
             axisY: {
                 title: "Subventionen",
-                includeZero: false,
-                maximum: 1000000
+                includeZero: false
             },
             axisX: {
                 labelFontSize: 9
@@ -112,28 +115,40 @@
     }
 
 
-    function showSubventionsByReligion(religionKey) {
-        switch (religionKey) {
+    function showSubventionsByReligion(id) {
+        switch (id) {
             case 1:
-                var dataPoints = @Html.Raw(ViewBag.Subventions2011);
+                var dataPoints = @Html.Raw(ViewBag.SubventionsEvan);
                 break;
             case 2:
-                var dataPoints = @Html.Raw(ViewBag.Subventions2012);
+                var dataPoints = @Html.Raw(ViewBag.SubventionsHuman);
                 break;
             case 3:
-                var dataPoints = @Html.Raw(ViewBag.Subventions2013);
+                var dataPoints = @Html.Raw(ViewBag.SubventionsErz);
                 break;
             case 4:
-                var dataPoints = @Html.Raw(ViewBag.Subventions2014);
+                var dataPoints = @Html.Raw(ViewBag.SubventionsIslam);
                 break;
             case 5:
-                var dataPoints = @Html.Raw(ViewBag.Subventions2015);
+                var dataPoints = @Html.Raw(ViewBag.SubventionsJued);
                 break;
             case 6:
-                var dataPoints = @Html.Raw(ViewBag.Subventions2016);
+                var dataPoints = @Html.Raw(ViewBag.SubventionsAlev);
+                break;
+            case 7:
+                var dataPoints = @Html.Raw(ViewBag.SubventionsChris);
+                break;
+            case 8:
+                var dataPoints = @Html.Raw(ViewBag.SubventionsBudd);
+                break;
+            case 9:
+                var dataPoints = @Html.Raw(ViewBag.SubventionsLaud);
+                break;
+            case 10:
+                var dataPoints = @Html.Raw(ViewBag.SubventionsJuedTra);
                 break;
             default:
-                var dataPoints = @Html.Raw(ViewBag.Subventions2011);
+                var dataPoints = @Html.Raw(ViewBag.SubventionsEvan);
                 break;
         }
 
@@ -163,41 +178,6 @@
             data: [{
                 type: "column",
                 dataPoints: dataPoints
-            }]
-        });
-
-        chart.render();
-    }
-
-
-    function showParticipants() {
-
-        var chart = new CanvasJS.Chart("chartContainer", {
-            animationEnabled: true,
-            theme: "light2",
-            title: {
-                text: "Teilnehmer",
-                margin: 25,
-                fontSize: 18
-            },
-            axisY: {
-                title: "Teilnehmer",
-                margin: 25,
-                titleFontSize: 18
-            },
-            toolTip: {
-                shared: true
-            },
-            data: [{
-                type: "line",
-                name: "Evangelischer Religionsunterricht",
-                showInLegend: true,
-                dataPoints: @Html.Raw(ViewBag.ParticipantsEvan)
-            }, {
-                type: "line",
-                name: "Katholischer Religionsunterricht",
-                showInLegend: true,
-                dataPoints: @Html.Raw(ViewBag.ParticipantsKath)
             }]
         });
 
@@ -293,6 +273,16 @@
                 name: "Humanistischer Lebenskundeunterricht",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.ParticipantsHuman)
+            }, {
+                type: "line",
+                name: "Islamischer Religionsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.ParticipantsIslam)
+            }, {
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.ParticipantsSonst)
             }]
         });
 
