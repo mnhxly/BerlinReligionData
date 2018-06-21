@@ -10,11 +10,6 @@ using Newtonsoft.Json;
 
 namespace BerlinReligionClassData.Controllers {
     public class HomeController : Controller {
-        private const string Evangelisch = "Evangelischer Religionsunterricht";
-        private const string Katholisch = "Katholischer Religionsunterricht";
-        private const string Islamisch = "Islamischer Religionsunterricht";
-        private const string Humanistisch = "Humanistischer Lebenskundeunterricht";
-        private const string Sonstig = "Sonstiger Religions- und Weltanschauungsunterricht";
 
         public ActionResult Index () {
             ParticipantFilter partfilter = new ParticipantFilter ();
