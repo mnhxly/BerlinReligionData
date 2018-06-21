@@ -2,6 +2,10 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace BerlinReligionClassData.Models {
+
+    /// <summary>
+    /// Subvention model.
+    /// </summary>
     public class Subvention {
         [Key]
         public int Id { get; set; }

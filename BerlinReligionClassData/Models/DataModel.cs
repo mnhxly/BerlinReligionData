@@ -15,6 +15,27 @@ using Newtonsoft.Json;
 namespace BerlinReligionClassData.Models {
 
     public class DataModel {
+
+
+        private static DataModel instance;
+
+        private DataModel() { }
+
+        public static DataModel Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new DataModel();
+                }
+                return instance;
+            }
+        }
+        /// <summary>
+        /// Creates the db.
+        /// Data is read from the excel reader and added to the sets Subventions and Participants.
+        /// </summary>
         public void CreateDB () 
         {
             using (var context = new ReligionDatabaseContext())

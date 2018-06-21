@@ -14,7 +14,7 @@ namespace BerlinReligionClassData {
     public class Program {
         public static void Main (string[] args) {
 
-            DataModel data = new DataModel ();
+            DataModel data = DataModel.Instance;
             data.CreateDB ();
 
             BuildWebHost (args).Run ();

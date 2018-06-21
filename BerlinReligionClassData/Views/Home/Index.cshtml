@@ -1,5 +1,9 @@
 ﻿@{ ViewData["Title"] = "Berlin Religion Data Tool"; }
 
+@* A really large View file with javascript functions to pass the data from the Controller to the charts! 
+    This is necessary to make the charts with canvas.js work. But it is not the ideal way to do it in the mvc pattern,
+    because we the javascript functions contain logic in it. *@
+
 <div id="content" class="chartView">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>

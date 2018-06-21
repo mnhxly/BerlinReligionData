@@ -1,5 +1,9 @@
 using System;
 namespace BerlinReligionClassData.Models {
+
+    /// <summary>
+    /// Participant model.
+    /// </summary>
     public class Participant {
         public int Id { get; set; }
         public double ParticipantAmount { get; set; }

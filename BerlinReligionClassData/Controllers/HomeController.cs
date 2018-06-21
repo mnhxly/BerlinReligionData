@@ -11,6 +11,12 @@ using Newtonsoft.Json;
 namespace BerlinReligionClassData.Controllers {
     public class HomeController : Controller {
 
+
+        /// <summary>
+        /// Index action to display the Homepage.
+        /// ViewBags are filled with data, which is provided by the filter methods from the models.
+        /// </summary>
+        /// <returns>The index.</returns>
         public ActionResult Index () {
             ParticipantFilter partfilter = new ParticipantFilter ();
             SubventionFilter subFilter = new SubventionFilter ();
@@ -52,6 +58,10 @@ namespace BerlinReligionClassData.Controllers {
             return View ();
         }
 
+        /// <summary>
+        /// About action the display the About page.
+        /// </summary>
+        /// <returns>The about.</returns>
         public IActionResult About () {
             ViewData["Message"] = "BerlinReligion Data, the best Tool to analyze the different religion classes in Belin";
 
