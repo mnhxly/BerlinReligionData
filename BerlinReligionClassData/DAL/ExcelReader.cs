@@ -15,7 +15,11 @@ namespace BerlinReligionClassData.DAL
 {
     public class ExcelReader
     {
-
+        /// <summary>
+        /// Reads alle data from the Datasorce .xls FIle and creates new Participant Objects with the data from the file.
+        /// Adds all the Participant Objects into the parlist.
+        /// </summary>
+        /// <returns>List of Participants from the .xls file</returns>
         public List<Participant> ReadParticipantSource()
         {
             List<Participant> parList = new List<Participant>();
@@ -78,7 +82,12 @@ namespace BerlinReligionClassData.DAL
             }
         }
 
-            public List<Subvention> ReadSubventionSource()
+        /// <summary>
+        /// Reads alle data from the Datasorce .xls FIle and creates new Subvention Objects with the data from the file.
+        /// Adds all the Subventions Objects into the sublist.
+        /// </summary>
+        /// <returns>List of Subventios from the .xls file</returns>
+        public List<Subvention> ReadSubventionSource()
             {
                 List<Subvention> subList = new List<Subvention>();
                 int id = 1;

@@ -26,14 +26,18 @@ namespace BerlinReligionClassData.Models {
                 context.Database.EnsureCreated();
                 ExcelReader excel = new ExcelReader();
 
+                //Adds every Subvention from the ReadSubventionSource SubventionList into the DatabaseContext
                 foreach (Subvention s in excel.ReadSubventionSource())
                 {
                     context.Subventions.Add(s);
                 }
+                //Adds every Participant from the ReadParticipantSource ParticipantList into the DatabaseContext
                 foreach (Participant p in excel.ReadParticipantSource())
                 {
                     context.Participants.Add(p);
                 }
+
+                //Saves all Changes to the database
                 context.SaveChanges();
             }   
 
