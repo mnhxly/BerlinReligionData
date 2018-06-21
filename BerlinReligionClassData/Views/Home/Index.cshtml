@@ -7,13 +7,13 @@
              <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#" onclick=showPartSub(1)>1</a>
-            <a href="#" onclick=showPartSub(3)>3</a>
-            <a href="#" onclick=showPartSub(4)>4</a>
-            <a href="#" onclick=showPartSub(6)>6</a>
-            <a href="#" onclick=showPartSub(7)>7</a>
-            <a href="#" onclick=showPartSub(8)>8</a>
-            <a href="#" onclick=showPartSub(9)>9</a>
+            <a href="#" onclick=showPartSub(1)>Evangelisch</a>
+            <a href="#" onclick=showPartSub(3)>Humanistisch</a>
+            <a href="#" onclick=showPartSub(4)>Islamisch</a>
+            <a href="#" onclick=showPartSub(6)>Jüdisch</a>
+            <a href="#" onclick=showPartSub(7)>Christlich</a>
+            <a href="#" onclick=showPartSub(8)>Alevitisch</a>
+            <a href="#" onclick=showPartSub(9)>Buddhistisch</a>
         </div>
         <button class="dropdown-btn">Subventionen nach Religion
              <i class="fa fa-caret-down"></i>
@@ -61,7 +61,7 @@
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 <script>
-    window.onload = showSubventionsByYear(2011);
+    window.onload = showPartSub(1);
 
     function showSubventionsByYear(year) {
         switch (year) {
@@ -111,7 +111,8 @@
             },
             axisX: {
                 labelAutoFit: true,
-                labelFontSize: 10
+                labelFontSize: 10,
+                interval: 1
             },
             data: [{
                 type: "column",
@@ -316,22 +317,22 @@
                 dataPoints: @Html.Raw(ViewBag.Participants5)
             }, {
                 type: "line",
-                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                name: "Jüdischer Religionsunterricht",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Participants6)
             }, {
                 type: "line",
-                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                name: "Religionsunterricht der Christengemeinschaft",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Participants7)
             }, {
                 type: "line",
-                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                name: "Alevitischer Religonsunterricht",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Participants8)
             }, {
                 type: "line",
-                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                name: "Buddhistischer Religionsunterricht ",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Participants9)
             }]
@@ -345,59 +346,52 @@
             case 1:
                 var dataPointsPar = @Html.Raw(ViewBag.Participants1);
                 var dataPointsSub = @Html.Raw(ViewBag.Subventions1);
-                var namePar = "";
-                var nameSub = "";
-                var nameSub2 = "";
+                var namePar = "Evangelischer Religionsunterricht";
+                var nameSub = "Evangelische Kirche Berlin - Brandenburg - schlesische Oberlausitz";
                 break;
             case 3:
                 var dataPointsPar = @Html.Raw(ViewBag.Participants3);
                 var dataPointsSub = @Html.Raw(ViewBag.Subventions2);
-                var namePar = "";
-                var nameSub = "";
-                var nameSub2 = "";
+                var namePar = "Humanistischer Lebenskundeunterricht";
+                var nameSub = "Humanisitischer Verband Berlin - Brandenburg";
                 break;
             case 4:
                 var dataPointsPar = @Html.Raw(ViewBag.Participants4);
                 var dataPointsSub = @Html.Raw(ViewBag.Subventions4);
-                var namePar = "";
-                var nameSub = "";
-                var nameSub2 = "";
+                var namePar = "Islamischer Religionsunterricht";
+                var nameSub = "Islamische Föderation Berlin";
                 break;
             case 6:
                 var dataPointsPar = @Html.Raw(ViewBag.Participants6);
                 var dataPointsSub = @Html.Raw(ViewBag.Subventions5);
                 var dataPointsSub2 = @Html.Raw(ViewBag.Subventions10);
-                var namePar = "";
-                var nameSub = "";
-                var nameSub2 = "";
+                var namePar = "Jüdischer Religionsunterricht";
+                var nameSub = "Jüdische Gemeinde zu Berlin";
+                var nameSub2 = "Jüdische Traditionsschule";
                 break;
             case 7:
                 var dataPointsPar = @Html.Raw(ViewBag.Participants7);
                 var dataPointsSub = @Html.Raw(ViewBag.Subventions7);
-                var namePar = "";
-                var nameSub = "";
-                var nameSub2 = "";
+                var namePar = "Religionsunterricht der Christengemeinschaft";
+                var nameSub = "Christengemeinschaft im Lande Berlin";
                 break;
             case 8:
                 var dataPointsPar = @Html.Raw(ViewBag.Participants8);
                 var dataPointsSub = @Html.Raw(ViewBag.Subventions6);
-                var namePar = "";
-                var nameSub = "";
-                var nameSub2 = "";
+                var namePar = "Alevitischer Religonsunterricht";
+                var nameSub = "Alevitische Gemeinde zu Berlin";
                 break;
             case 9:
                 var dataPointsPar = @Html.Raw(ViewBag.Participants9);
                 var dataPointsSub = @Html.Raw(ViewBag.Subventions8);
-                var namePar = "";
-                var nameSub = "";
-                var nameSub2 = "";
+                var namePar = "Buddhistischer Religionsunterricht ";
+                var nameSub = "Buddhistische Gesellschaft Berlin";
                 break;
             default:
                 var dataPointsPar = @Html.Raw(ViewBag.Participants1);
                 var dataPointsSub = @Html.Raw(ViewBag.Subventions1);
-                var namePar = "";
-                var nameSub = "";
-                var nameSub2 = "";
+                var namePar = "Evangelischer Religionsunterricht";
+                var nameSub = "Evangelische Kirche Berlin - Brandenburg - schlesische Oberlausitz";
                 break;
         }
 
@@ -425,16 +419,20 @@
                 labelAutoFit: true,
                 labelFontSize: 12
             },
+            toolTip: {
+                shared: true
+            },
             data: [{
                 type: "column",
-                name: nameSub,
+                name: nameSub + " (Subventionen)",
+                showInLegend: true,
                 indexLabel: "{y}",
                 indexLabelPlacement: "outside",
                 indexLabelOrientation: "horizontal",
                 dataPoints: dataPointsSub
             }, {
                 type: "line",
-                name: namePar,
+                name: namePar + " (Teilnehmer)",
                 showInLegend: true,
                 axisYType: "secondary",
                 indexLabel: "{y}",
@@ -444,7 +442,7 @@
                 dataPoints: dataPointsPar
             }, {
                 type: "line",
-                name: nameSub2,
+                name: nameSub2 + " (Subventionen)",
                 showInLegend: true,
                 axisYType: "secondary",
                 indexLabel: "{y}",
