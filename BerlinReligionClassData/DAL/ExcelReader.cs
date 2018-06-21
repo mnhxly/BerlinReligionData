@@ -69,7 +69,7 @@ namespace BerlinReligionClassData.DAL
 
                                 break;
                         }
-                            Participant p = new Participant(id, Convert.ToDouble(row.Cells[l].ToString()), year, row.Cells[1].ToString(), Convert.ToInt32(row.Cells[0].ToString()));
+                        Participant p = new Participant(id, Convert.ToDouble(row.Cells[l].ToString()), year, row.Cells[1].ToString().Trim(), Convert.ToInt32(row.Cells[0].ToString()));
                         id++;
                         parList.Add(p);
                     }
@@ -135,7 +135,7 @@ namespace BerlinReligionClassData.DAL
 
                                     break;
                             }
-                            Subvention s = new Subvention(id, Convert.ToDouble(row.Cells[l].ToString()), year, row.Cells[1].ToString(), Convert.ToInt32(row.Cells[0].ToString()));
+                        Subvention s = new Subvention(id, Convert.ToDouble(row.Cells[l].ToString()), year, row.Cells[1].ToString().Trim(), Convert.ToInt32(row.Cells[0].ToString()));
                             id++;
                             subList.Add(s);
                         }
