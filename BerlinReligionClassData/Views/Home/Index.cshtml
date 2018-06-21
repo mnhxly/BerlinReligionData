@@ -3,12 +3,23 @@
 <div id="content" class="chartView">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#" onclick=showPartSub()>Teilnehmer-Subventionen Vergleich</a>
+        <button class="dropdown-btn">Vergleich der Subventionen zu Teilnehmer 
+             <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#" onclick=showPartSub(1)>1</a>
+            <a href="#" onclick=showPartSub(3)>3</a>
+            <a href="#" onclick=showPartSub(4)>4</a>
+            <a href="#" onclick=showPartSub(6)>6</a>
+            <a href="#" onclick=showPartSub(7)>7</a>
+            <a href="#" onclick=showPartSub(8)>8</a>
+            <a href="#" onclick=showPartSub(9)>9</a>
+        </div>
         <button class="dropdown-btn">Subventionen nach Religion
              <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-           <a href="#" onclick=showSubventionsByReligion()>2011 - 2016</a>
+            <a href="#" onclick=showSubventionsByReligion()>2011 - 2016</a>
         </div>
         <button class="dropdown-btn">Subventionen nach Jahr 
              <i class="fa fa-caret-down"></i>
@@ -101,11 +112,11 @@
             axisX: {
                 labelAutoFit: true,
                 labelFontSize: 10
-               },
+            },
             data: [{
                 type: "column",
                 indexLabel: "{y}",
-                indexLabelPlacement: "outside",  
+                indexLabelPlacement: "outside",
                 indexLabelOrientation: "horizontal",
                 dataPoints: dataPoints
             }]
@@ -136,7 +147,8 @@
             axisY: {
                 title: "Subventionen",
                 includeZero: true,
-                minimum: 100
+                minimum: 100,
+                suffix: " EUR"
             },
             axisX: {
                 labelAutoFit: true,
@@ -147,7 +159,7 @@
                 name: "Evangelische Kirche Berlin - Brandenburg - schlesische Oberlausitz",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Subventions1)
-            },{
+            }, {
                 type: "line",
                 name: "Humanisitischer Verband Berlin - Brandenburg",
                 showInLegend: true,
@@ -177,19 +189,19 @@
                 name: "Christengemeinschaft im Lande Berlin",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Subventions7)
-            },{
+            }, {
                 type: "line",
-                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                name: "Buddhistische Gesellschaft Berlin",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Subventions8)
-            },{
+            }, {
                 type: "line",
-                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                name: "Lauder Beth Zion",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Subventions9)
-            },{
+            }, {
                 type: "line",
-                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                name: "Jüdische Traditionsschule",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Subventions10)
             }]
@@ -249,7 +261,7 @@
             data: [{
                 type: "column",
                 indexLabel: "{y}",
-                indexLabelPlacement: "outside",  
+                indexLabelPlacement: "outside",
                 indexLabelOrientation: "horizontal",
                 dataPoints: dataPoints
             }]
@@ -307,17 +319,17 @@
                 name: "Sonstiger Religions- und Weltanschauungsunterricht",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Participants6)
-            },{
+            }, {
                 type: "line",
                 name: "Sonstiger Religions- und Weltanschauungsunterricht",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Participants7)
-            },{
+            }, {
                 type: "line",
                 name: "Sonstiger Religions- und Weltanschauungsunterricht",
                 showInLegend: true,
                 dataPoints: @Html.Raw(ViewBag.Participants8)
-            },{
+            }, {
                 type: "line",
                 name: "Sonstiger Religions- und Weltanschauungsunterricht",
                 showInLegend: true,
@@ -328,7 +340,66 @@
         chart.render();
     }
 
-    function showPartSub() {
+    function showPartSub(number) {
+        switch (number) {
+            case 1:
+                var dataPointsPar = @Html.Raw(ViewBag.Participants1);
+                var dataPointsSub = @Html.Raw(ViewBag.Subventions1);
+                var namePar = "";
+                var nameSub = "";
+                var nameSub2 = "";
+                break;
+            case 3:
+                var dataPointsPar = @Html.Raw(ViewBag.Participants3);
+                var dataPointsSub = @Html.Raw(ViewBag.Subventions2);
+                var namePar = "";
+                var nameSub = "";
+                var nameSub2 = "";
+                break;
+            case 4:
+                var dataPointsPar = @Html.Raw(ViewBag.Participants4);
+                var dataPointsSub = @Html.Raw(ViewBag.Subventions4);
+                var namePar = "";
+                var nameSub = "";
+                var nameSub2 = "";
+                break;
+            case 6:
+                var dataPointsPar = @Html.Raw(ViewBag.Participants6);
+                var dataPointsSub = @Html.Raw(ViewBag.Subventions5);
+                var dataPointsSub2 = @Html.Raw(ViewBag.Subventions10);
+                var namePar = "";
+                var nameSub = "";
+                var nameSub2 = "";
+                break;
+            case 7:
+                var dataPointsPar = @Html.Raw(ViewBag.Participants7);
+                var dataPointsSub = @Html.Raw(ViewBag.Subventions7);
+                var namePar = "";
+                var nameSub = "";
+                var nameSub2 = "";
+                break;
+            case 8:
+                var dataPointsPar = @Html.Raw(ViewBag.Participants8);
+                var dataPointsSub = @Html.Raw(ViewBag.Subventions6);
+                var namePar = "";
+                var nameSub = "";
+                var nameSub2 = "";
+                break;
+            case 9:
+                var dataPointsPar = @Html.Raw(ViewBag.Participants9);
+                var dataPointsSub = @Html.Raw(ViewBag.Subventions8);
+                var namePar = "";
+                var nameSub = "";
+                var nameSub2 = "";
+                break;
+            default:
+                var dataPointsPar = @Html.Raw(ViewBag.Participants1);
+                var dataPointsSub = @Html.Raw(ViewBag.Subventions1);
+                var namePar = "";
+                var nameSub = "";
+                var nameSub2 = "";
+                break;
+        }
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
@@ -344,18 +415,43 @@
             },
             axisY: {
                 title: "Subventionen",
+                includeZero: false
+            },
+            axisY2: {
+                title: "Teilnehmer",
                 includeZero: false,
-                maximum: 1000000
             },
             axisX: {
-                labelFontSize: 9
+                labelAutoFit: true,
+                labelFontSize: 12
             },
             data: [{
                 type: "column",
+                name: nameSub,
                 indexLabel: "{y}",
-                indexLabelPlacement: "outside",  
+                indexLabelPlacement: "outside",
                 indexLabelOrientation: "horizontal",
-                dataPoints: @Html.Raw(ViewBag.Subventions2011)
+                dataPoints: dataPointsSub
+            }, {
+                type: "line",
+                name: namePar,
+                showInLegend: true,
+                axisYType: "secondary",
+                indexLabel: "{y}",
+                indexLabelFontColor: "red",
+                indexLabelPlacement: "outside",
+                indexLabelOrientation: "horizontal",
+                dataPoints: dataPointsPar
+            }, {
+                type: "line",
+                name: nameSub2,
+                showInLegend: true,
+                axisYType: "secondary",
+                indexLabel: "{y}",
+                indexLabelFontColor: "red",
+                indexLabelPlacement: "outside",
+                indexLabelOrientation: "horizontal",
+                dataPoints: dataPointsSub2
             }]
         });
 
