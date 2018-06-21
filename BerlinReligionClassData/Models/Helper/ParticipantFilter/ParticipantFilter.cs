@@ -6,12 +6,14 @@ using BerlinReligionClassData.Models;
 using Newtonsoft.Json;
 
 namespace BerlinReligionClassData.Models.Helper.ParticipantFilter {
+    
     public class ParticipantFilter {
-        public string ParticipantsByReligion (string religion) {
+        
+        public string ParticipantsByReligionKey (int religionKey) {
             List<DataPoint> dataPoints = new List<DataPoint> ();
 
             using (var context = new ReligionDatabaseContext ()) {
-                var participants = from v in context.Participants where v.Religion == religion select v;
+                var participants = from v in context.Participants where v.ReligionKey == religionKey select v;
 
                 foreach (var participant in participants) {
                     dataPoints.Add (new DataPoint (Convert.ToString (participant.Year), participant.ParticipantAmount));

@@ -8,16 +8,7 @@
              <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#" onclick=showSubventionsByReligion(1)>Evangelische Kirche</a>
-            <a href="#" onclick=showSubventionsByReligion(2)>Humanistischer Verband</a>
-            <a href="#" onclick=showSubventionsByReligion(3)>Erzbistum</a>
-            <a href="#" onclick=showSubventionsByReligion(4)>Islamische Föderation</a>
-            <a href="#" onclick=showSubventionsByReligion(5)>Jüdische Gemeinde</a>
-            <a href="#" onclick=showSubventionsByReligion(6)>Alevitische Gemeinde</a>
-            <a href="#" onclick=showSubventionsByReligion(7)>Christengemeinschaft</a>
-            <a href="#" onclick=showSubventionsByReligion(8)>Buddhistische Gesellschaft</a>
-            <a href="#" onclick=showSubventionsByReligion(9)>Lauder Beth Zion</a>
-            <a href="#" onclick=showSubventionsByReligion(10)>Jüdische Traditionsschule</a>
+           <a href="#" onclick=showSubventionsByReligion()>2011 - 2016</a>
         </div>
         <button class="dropdown-btn">Subventionen nach Jahr 
              <i class="fa fa-caret-down"></i>
@@ -48,11 +39,14 @@
             <a href="#" onclick=showParticipantsByYear(2016)>Teilnehmer im Jahr 2016</a>
         </div>
     </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Filtere die Daten</span>
+    <span style="        font-size: 30px;
+        cursor: pointer" onclick="openNav()">&#9776; Filtere die Daten</span>
 
 </div>
 
-<div id="chartContainer" style=" height: 370px; width: 100%;"></div>
+<div id="chartContainer" style="        height: 370px;
+        width: 100%;"></div>
+
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 <script>
@@ -100,13 +94,19 @@
             },
             axisY: {
                 title: "Subventionen",
-                includeZero: false
+                includeZero: true,
+                maximum: 1000000,
+                minimum: 100
             },
             axisX: {
-                labelFontSize: 9
-            },
+                labelAutoFit: true,
+                labelFontSize: 10
+               },
             data: [{
                 type: "column",
+                indexLabel: "{y}",
+                indexLabelPlacement: "outside",  
+                indexLabelOrientation: "horizontal",
                 dataPoints: dataPoints
             }]
         });
@@ -115,52 +115,18 @@
     }
 
 
-    function showSubventionsByReligion(id) {
-        switch (id) {
-            case 1:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsEvan);
-                break;
-            case 2:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsHuman);
-                break;
-            case 3:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsErz);
-                break;
-            case 4:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsIslam);
-                break;
-            case 5:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsJued);
-                break;
-            case 6:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsAlev);
-                break;
-            case 7:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsChris);
-                break;
-            case 8:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsBudd);
-                break;
-            case 9:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsLaud);
-                break;
-            case 10:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsJuedTra);
-                break;
-            default:
-                var dataPoints = @Html.Raw(ViewBag.SubventionsEvan);
-                break;
-        }
+    function showSubventionsByReligion() {
 
 
-        var title = `Subventionen in ${year}`;
+        var title = `Subventionen`;
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             theme: "light2",
             toolTip: {
                 enabled: true,
-                animationEnabled: true
+                animationEnabled: true,
+                shared: true
             },
             title: {
                 text: title,
@@ -169,15 +135,63 @@
             },
             axisY: {
                 title: "Subventionen",
-                includeZero: false,
-                maximum: 1000000
+                includeZero: true,
+                minimum: 100
             },
             axisX: {
-                labelFontSize: 9
+                labelAutoFit: true,
+                labelFontSize: 12
             },
             data: [{
-                type: "column",
-                dataPoints: dataPoints
+                type: "line",
+                name: "Evangelischer Religionsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Participants1)
+            },{
+                type: "line",
+                name: "Evangelischer Religionsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Subventions2)
+            }, {
+                type: "line",
+                name: "Katholischer Religionsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Subventions3)
+            }, {
+                type: "line",
+                name: "Humanistischer Lebenskundeunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Subventions4)
+            }, {
+                type: "line",
+                name: "Islamischer Religionsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Subventions5)
+            }, {
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Subventions6)
+            }, {
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Subventions7)
+            },{
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Subventions8)
+            },{
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Subventions9)
+            },{
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Subventions10)
             }]
         });
 
@@ -225,14 +239,18 @@
             },
             axisY: {
                 title: "Teilnehmer",
-                includeZero: false
+                includeZero: true,
+                maximum: 90000
             },
             axisX: {
                 labelAutoFit: true,
-                labelFontSize: 12
+                labelFontSize: 9
             },
             data: [{
                 type: "column",
+                indexLabel: "{y}",
+                indexLabelPlacement: "outside",  
+                indexLabelOrientation: "horizontal",
                 dataPoints: dataPoints
             }]
         });
@@ -253,7 +271,8 @@
             axisY: {
                 title: "Teilnehmer",
                 margin: 25,
-                titleFontSize: 18
+                titleFontSize: 18,
+                minimum: 10
             },
             toolTip: {
                 shared: true
@@ -262,27 +281,47 @@
                 type: "line",
                 name: "Evangelischer Religionsunterricht",
                 showInLegend: true,
-                dataPoints: @Html.Raw(ViewBag.ParticipantsEvan)
+                dataPoints: @Html.Raw(ViewBag.Participants1)
             }, {
                 type: "line",
                 name: "Katholischer Religionsunterricht",
                 showInLegend: true,
-                dataPoints: @Html.Raw(ViewBag.ParticipantsKath)
+                dataPoints: @Html.Raw(ViewBag.Participants2)
             }, {
                 type: "line",
                 name: "Humanistischer Lebenskundeunterricht",
                 showInLegend: true,
-                dataPoints: @Html.Raw(ViewBag.ParticipantsHuman)
+                dataPoints: @Html.Raw(ViewBag.Participants3)
             }, {
                 type: "line",
                 name: "Islamischer Religionsunterricht",
                 showInLegend: true,
-                dataPoints: @Html.Raw(ViewBag.ParticipantsIslam)
+                dataPoints: @Html.Raw(ViewBag.Participants4)
             }, {
                 type: "line",
                 name: "Sonstiger Religions- und Weltanschauungsunterricht",
                 showInLegend: true,
-                dataPoints: @Html.Raw(ViewBag.ParticipantsSonst)
+                dataPoints: @Html.Raw(ViewBag.Participants5)
+            }, {
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Participants6)
+            },{
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Participants7)
+            },{
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Participants8)
+            },{
+                type: "line",
+                name: "Sonstiger Religions- und Weltanschauungsunterricht",
+                showInLegend: true,
+                dataPoints: @Html.Raw(ViewBag.Participants9)
             }]
         });
 
@@ -313,6 +352,9 @@
             },
             data: [{
                 type: "column",
+                indexLabel: "{y}",
+                indexLabelPlacement: "outside",  
+                indexLabelOrientation: "horizontal",
                 dataPoints: @Html.Raw(ViewBag.Subventions2011)
             }]
         });

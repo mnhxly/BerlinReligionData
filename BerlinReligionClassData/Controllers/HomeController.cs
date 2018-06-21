@@ -26,16 +26,16 @@ namespace BerlinReligionClassData.Controllers {
             ViewBag.Subventions2015 = subFilter.DataByYear (year: 2015);
             ViewBag.Subventions2016 = subFilter.DataByYear (year: 2016);
 
-            ViewBag.SubventionsEvan = subFilter.SubventionsByReligion ("Evangelische Kirche");
-            ViewBag.SubventionsHuman = subFilter.SubventionsByReligion ("Humanistischer Verband");
-            ViewBag.SubventionsErz = subFilter.SubventionsByReligion ("Erzbistum");
-            ViewBag.SubventionsIslam = subFilter.SubventionsByReligion ("Islamische Föderation");
-            ViewBag.SubventionsJued = subFilter.SubventionsByReligion ("Jüdische Gemeinde");
-            ViewBag.SubventionsAlev = subFilter.SubventionsByReligion ("Alevitische Gemeinde");
-            ViewBag.SubventionsChris = subFilter.SubventionsByReligion ("Christengemeinschaft");
-            ViewBag.SubventionsBudd = subFilter.SubventionsByReligion ("Buddhistische Gesellschaft");
-            ViewBag.SubventionsLaud = subFilter.SubventionsByReligion ("Lauder Beth Zion");
-            ViewBag.SubventionsJuedTra = subFilter.SubventionsByReligion ("Jüdische Traditionsschule");
+            ViewBag.Subventions1 = subFilter.SubventionsByReligion ("Evangelische Kirche Berlin - Brandenburg - schlesische Oberlausitz");
+            ViewBag.Subventions2 = subFilter.SubventionsByReligion ("Humanisitischer Verband Berlin - Brandenburg");
+            ViewBag.Subventions3 = subFilter.SubventionsByReligion ("Erzbistum Berlin");
+            ViewBag.Subventions4 = subFilter.SubventionsByReligion ("Islamische Föderation Berlin");
+            ViewBag.Subventions5 = subFilter.SubventionsByReligion ("Jüdische Gemeinde zu Berlin");
+            ViewBag.Subventions6 = subFilter.SubventionsByReligion ("Alevitische Gemeinde zu Berlin");
+            ViewBag.Subventions7 = subFilter.SubventionsByReligion ("Christengemeinschaft im Lande Berlin");
+            ViewBag.Subventions8 = subFilter.SubventionsByReligion ("Buddhistische Gesellschaft Berlin");
+            ViewBag.Subventions9 = subFilter.SubventionsByReligion ("Lauder Beth Zion");
+            ViewBag.Subventions10 = subFilter.SubventionsByReligion("Jüdische Traditionsschule");
 
             ViewBag.Participants2011 = partfilter.ParticipantsByYear (year: 2011);
             ViewBag.Participants2012 = partfilter.ParticipantsByYear (year: 2012);
@@ -44,11 +44,16 @@ namespace BerlinReligionClassData.Controllers {
             ViewBag.Participants2015 = partfilter.ParticipantsByYear (year: 2015);
             ViewBag.Participants2016 = partfilter.ParticipantsByYear (year: 2016);
 
-            ViewBag.ParticipantsEvan = partfilter.ParticipantsByReligion (Evangelisch);
-            ViewBag.ParticipantsKath = partfilter.ParticipantsByReligion (Katholisch);
-            ViewBag.ParticipantsHuman = partfilter.ParticipantsByReligion (Humanistisch);
-            ViewBag.ParticipantsIslam = partfilter.ParticipantsByReligion (Islamisch);
-            ViewBag.ParticipantsSonst = partfilter.ParticipantsByReligion (Sonstig);
+            ViewBag.Participants1 = partfilter.ParticipantsByReligionKey (1);
+            ViewBag.Participants2 = partfilter.ParticipantsByReligionKey (2);
+            ViewBag.Participants3 = partfilter.ParticipantsByReligionKey (3);
+            ViewBag.Participants4 = partfilter.ParticipantsByReligionKey (4);
+            ViewBag.Participants5 = partfilter.ParticipantsByReligionKey (5);
+            ViewBag.Participants6 = partfilter.ParticipantsByReligionKey(6);
+            ViewBag.Participants7 = partfilter.ParticipantsByReligionKey(7);
+            ViewBag.Participants8 = partfilter.ParticipantsByReligionKey(8);
+            ViewBag.Participants9 = partfilter.ParticipantsByReligionKey(9);
+
             return View ();
         }
 
