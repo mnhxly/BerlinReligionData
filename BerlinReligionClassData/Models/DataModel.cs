@@ -26,12 +26,12 @@ namespace BerlinReligionClassData.Models {
                 context.Database.EnsureCreated();
                 ExcelReader excel = new ExcelReader();
 
-                //Adds every Subvention from the SubventionList into the DatabaseContext
+                //Adds every Subvention from the ReadSubventionSource SubventionList into the DatabaseContext
                 foreach (Subvention s in excel.ReadSubventionSource())
                 {
                     context.Subventions.Add(s);
                 }
-                //Adds every Participant from the ParticipantList into the DatabaseContext
+                //Adds every Participant from the ReadParticipantSource ParticipantList into the DatabaseContext
                 foreach (Participant p in excel.ReadParticipantSource())
                 {
                     context.Participants.Add(p);

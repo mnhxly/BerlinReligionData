@@ -53,13 +53,13 @@ namespace BerlinReligionClassData.Controllers {
         }
 
         public IActionResult About () {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "BerlinReligion Data, the best Tool to analyze the different religion classes in Belin";
            
             return View ();
         }
 
         public IActionResult Contact () {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Our Contacts:";
 
             return View ();
         }
